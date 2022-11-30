@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/united-states-of-america.png" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Alrededor de los EE.UU</title>
+  </head>
+  <body>
+ 
+    <div class="page">
+        <header class="header">
+          <h1 class="header__title">
+            <img
+              src="./images/tittle.svg"
+              alt="Around the U.S"
+              class="header__logo"
+            />
+          </h1>
+          <div class="header__line"></div>
+        </header>
+        <main class="main">
+          <section class="profile">
+            <div class="profile-picture">
+              <img
+                src="./images/avatar.svg"
+                alt="person"
+                class="profile__avatar"
+              />
+              <div class="profile__container">
+                <div class="profile__container-plus">
+                  <p class="profile__name">Jacques Cousteau</p>
+                  <div id="penbutton" class="edit-button">
+                    <img
+                      src="./images/pencil.svg"
+                      alt="shouldbeapenpicture"
+                      class="edit-button__pen"
+                    />
+                  </div>
+                </div>
+                <p class="profile-description__job">Explorador</p>
+              </div>
+            </div>
+            <button type="submit" class="plus-button" value="submit">
+              <img
+                src="./images/plus.svg"
+                alt="shouldbeaplus"
+                class="add-buttton__plus"
+              />
+            </button>
+            <div class="template">
+              <div class="popup">
+                <a id="close" class="popup__close-select">
+                  <img
+                    src="./images/Close-Icon.svg"
+                    alt="shouldbeaxbutton"
+                    class="popup__img-select"
+                  />
+                </a>
+                <div class="popup__box">
+                  <h3 class="popup__title-box">Editar Perfil</h3>
+                  <form class="popup__form" name="edit">
+                    <input
+                      class="popup__new popup__new_name"
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      required
+                    />
+                    <input
+                      class="popup__new popup__new_job"
+                      type="text"
+                      name="job"
+                      placeholder="description"
+                      required
+                    />
+                    <button id="close" type="button" class="popup__save-button">Guardar</button>
+                  </form>
+                </div>
+              </div>
+              <div class="overlay"></div>
+            </div>
+          </section>
+          <div class="cards">
+            <ul class="cards__container">
+              <li class="cards__elements">
+<img src="./images/Yosemite.svg" alt="shouldbeaviewpicture" class="card__picture"/>
+                <div class="card__container-info">
+                  <p class="card__text">Valle de Yosemite</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+              <li class="cards__elements">
+                <img
+                  src="./images/Louise.svg"
+                  alt="shouldbeaviewpicture"
+                  class="card__picture"
+                />
+                <div class="card__container-info">
+                  <p class="card__text">Lago Louise</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+              <li class="cards__elements">
+                <img
+                  src="./images/Montañas-calvas.svg"
+                  alt="shouldbeaviewpicture"
+                  class="card__picture"
+                />
+  
+                <div class="card__container-info">
+                  <p class="card__text">Montañas Calvas</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+              <li class="cards__elements">
+                <img
+                  src="./images/Latemar.svg"
+                  alt="Latemar"
+                  class="card__picture"
+                />
+                <div class="card__container-info">
+                  <p class="card__text">Latemar</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+              <li class="cards__elements">
+                <img
+                  src="./images/Vanoise.svg"
+                  alt="Vanoise National"
+                  class="card__picture"
+                />
+                <div class="card__container-info">
+                  <p class="card__text">Vanoise National park</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+              <li class="cards__elements">
+                <img
+                  src="./images/Di-Braies.svg"
+                  alt="Lago di Braies"
+                  class="card__picture"
+                />
+                <div class="card__container-info">
+                  <p class="card__text">Lago di Braies</p>
+                  <img
+                    src="./images/heart-icon.svg"
+                    alt="shouldbeaheartpicture"
+                    class="like__icon"
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">© 2022 Alrededor de los EEUU</p>
+        </footer>
+      </div>
+     <script src = "./index.js"> </script>
+</body>
+</html>
