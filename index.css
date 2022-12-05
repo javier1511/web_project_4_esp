@@ -25,17 +25,18 @@ body{
 }
 
 .header__line{
-    
     width: 68.75%;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+
 }
 
 .profile{
     width: 68.75%;
-    display: flex;
-    align-items: center;
+     display: flex;
     padding-bottom: 50px;
     padding-top: 40px;
- 
+    align-items: center;
+    justify-content: space-between;
 
 }
 
@@ -45,15 +46,20 @@ body{
     border-radius: 50%;
     margin-left: 0;
     margin-right: 0;
+ 
+   
   
 }
 
 .profile__text-container{
-    width: 35%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40px;
-
+    width: 320px;
+height: 50px;
+margin-left: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-right: 0;
+margin-left: 20px;
 }
 
 .profile__title{
@@ -62,6 +68,10 @@ font-style: normal;
 font-weight: 500;
 font-size: 42px;
 line-height: 48px;
+margin-left: 0;
+margin-right: 0;
+
+
 
 
 }
@@ -72,7 +82,14 @@ font-style: normal;
 font-weight: 400;
 font-size: 18px;
 line-height: 22px;
+margin-left: 0;
 
+
+}
+
+.profile__button-container{
+ display: flex;
+ margin-left: 0;
 }
 
 .profile__edit-button{
@@ -83,8 +100,9 @@ line-height: 22px;
     background-color: black;
     width: 24px;
     height: 24px;
-    margin-left: 18px;
-  
+    margin-top: 7px;
+    border: none;
+   
 }
 
 .profile__plus-button{
@@ -94,7 +112,8 @@ line-height: 22px;
     background-color: black;
     width: 150px;
     height: 50px;
-    margin-right: 0;
+    margin-left: 250px;
+    border: none;
 }
 
 .sites{
@@ -141,7 +160,8 @@ line-height: 29px;
 }
 
 .footer{
-    width: 68.75%; 
+    width: 68.75%;
+  
 }
 
 .copyright{
@@ -155,6 +175,7 @@ line-height: 22px;
 color: #545454;
 padding-bottom: 60px;
 padding-top: 68px;
+margin-left: 0;
 }
 
 .popup{
@@ -167,6 +188,7 @@ padding-top: 68px;
   justify-content: center;
   align-items: center;
   color: black;
+    display: none;
 }
 
 .popup::after {
@@ -251,3 +273,142 @@ height: 330px;
     opacity: 0.8;
   }
 
+  @media screen and (max-width: 1279px) {
+    .page {
+        width: 320px;   
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .header {
+        width: 100%;
+        padding-top: 28px;
+        padding-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .header__logo{
+        width: 126px;
+height: 24px;
+padding-left: 27px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .profile{
+        width: 100%;
+        flex-direction: column;
+      
+    
+      
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .profile__button-container{
+        width: 100%;
+        margin: 0 auto;
+   
+      
+    }
+}
+@media screen and (max-width: 1279px) {
+    .profile__button-container{
+        width: 100%;
+        margin: 0 auto;
+       flex-direction: column;
+   
+      
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .profile__plus-button{
+       
+     background-repeat: no-repeat;
+        background-size: 100%;
+        max-width: 282px;
+        height: 50px;
+     border: none;
+        padding-top: 0;
+        margin-left: 0;
+        margin: auto;
+     
+      
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .profile__edit-button{
+        margin:auto;
+        margin-left: 254    px;
+        margin-right: 0;
+      
+    
+        
+      
+   
+      
+    }
+}
+
+
+@media screen and (max-width: 1279px) {
+    .profile__subtitle{
+        margin: 0  auto;
+        margin-top: 14px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        
+        
+      
+   
+      
+    }
+}
+@media screen and (max-width: 1279px) {
+    .profile__text-container{
+        margin: 0  auto;
+       
+
+    
+        
+      
+   
+      
+    }
+}
+@media screen and (max-width: 1279px) {
+    .profile__title{
+        margin: 0  auto;
+        margin-top: 26.5px;
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+
+    
+        
+      
+   
+      
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .sites{
+width: 100%;
+    
+        
+      
+   
+      
+    }
+}
