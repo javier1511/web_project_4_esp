@@ -32,34 +32,34 @@ body{
 
 .profile{
     width: 68.75%;
-     display: flex;
     padding-bottom: 50px;
     padding-top: 40px;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 1fr auto;
+ 
+}
 
+.profile__picture-container{
+   
 }
 
 .profile__picture{
     max-width: 168.75px;
     height: 120px;
     border-radius: 50%;
-    margin-left: 0;
-    margin-right: 0;
+
  
-   
-  
 }
 
-.profile__text-container{
-    width: 320px;
-height: 50px;
-margin-left: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-right: 0;
-margin-left: 20px;
+.profile__edit-container{
+    width: 373px;
+     height: 39px;
+     display: flex;
+     margin: 0;
+     grid-column: 2 / 3;
+     grid-row: 1 / 2;
+     padding-left: 15px;
 }
 
 .profile__title{
@@ -68,29 +68,34 @@ font-style: normal;
 font-weight: 500;
 font-size: 42px;
 line-height: 48px;
-margin-left: 0;
-margin-right: 0;
+margin: 0;
+
 
 
 
 
 }
 
+.profile__job-container{
+ 
+    height: auto;
+grid-column: 2 / 3;
+grid-row: 1 / 2;
+padding-left: 15px;
+margin: 0;
+   
+}
 .profile__subtitle{
+    Height:22px;
     font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
 line-height: 22px;
-margin-left: 0;
-
-
+padding-top: 50px;
 }
 
-.profile__button-container{
- display: flex;
- margin-left: 0;
-}
+
 
 .profile__edit-button{
     background-image: url(./images/EditButton.svg);
@@ -100,11 +105,23 @@ margin-left: 0;
     background-color: black;
     width: 24px;
     height: 24px;
-    margin-top: 7px;
-    border: none;
-   
+   border: none;
+   display: flex;
+   flex-direction: column-reverse;
+margin-top: 15px;
+margin-left: 25px; 
 }
 
+.profile__edit-button:hover{
+    opacity: 0.1;
+    cursor: pointer;
+
+}
+.profile__plus-container{
+ display: flex;
+    width: 100%;
+   flex-direction: row-reverse;
+}
 .profile__plus-button{
     background-image: url(./images/Add-Button1280px.svg);
     background-repeat: no-repeat;
@@ -112,16 +129,15 @@ margin-left: 0;
     background-color: black;
     width: 150px;
     height: 50px;
-    margin-left: 250px;
     border: none;
+
 }
 
 .sites{
     width: 68.75%; 
     display: flex;
 flex-wrap: wrap;
-
-    gap: 17px;
+gap: 17px;
    
 }
 
@@ -188,23 +204,36 @@ margin-left: 0;
   justify-content: center;
   align-items: center;
   color: black;
-    display: none;
+  display: none;
+  z-index: 1;
+ 
+
 }
 
-.popup::after {
-    content: "";
+.overlay{
+    content: " ";
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background-color: #000;
     opacity: 0.5;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
+    display: none;
+   
+    
+
   }
 
-  .popup_opened {
-    display: flex;
+
+
+  .overlay__visible{
+    display:block ;
+  }
+
+  .popup__opened {
+    display: block;
   }
 
 .popup__container{
@@ -214,6 +243,7 @@ margin-left: 0;
     border-radius: 10px;
     position: relative;
     padding: 34px 36px;
+
  
 }
 .popup__close-icon {
@@ -233,7 +263,7 @@ margin-left: 0;
     flex-direction: column;
     justify-content: space-between;
     width: 430px;
-height: 330px;
+    height: 330px;
     
 }
  .form__title{
@@ -247,7 +277,7 @@ height: 330px;
  }
 
  .form__input {
-    width: 358px;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #cccccc;
     padding-bottom: 13px;
@@ -259,7 +289,7 @@ height: 330px;
 
   .form__button {
     background-color: #000000;
-    width: 358px;
+    width: 100%;
     height: 50px;
     color: #fff;
     cursor: pointer;
@@ -273,15 +303,17 @@ height: 330px;
     opacity: 0.8;
   }
 
+
   @media screen and (max-width: 1279px) {
     .page {
-        width: 320px;   
+        width: 320px;
+        margin: auto;
     }
 }
 
 @media screen and (max-width: 1279px) {
     .header {
-        width: 100%;
+        width: 320px;
         padding-top: 28px;
         padding-bottom: 32px;
     }
@@ -297,67 +329,72 @@ padding-left: 27px;
 
 @media screen and (max-width: 1279px) {
     .profile{
-        width: 100%;
+        width: 282px;
+        display: flex;
         flex-direction: column;
-      
-    
-      
-    }
-}
-
-@media screen and (max-width: 1279px) {
-    .profile__button-container{
-        width: 100%;
-        margin: 0 auto;
-   
-      
-    }
-}
-@media screen and (max-width: 1279px) {
-    .profile__button-container{
-        width: 100%;
-        margin: 0 auto;
-       flex-direction: column;
-   
-      
-    }
-}
-
-@media screen and (max-width: 1279px) {
-    .profile__plus-button{
-       
-     background-repeat: no-repeat;
-        background-size: 100%;
-        max-width: 282px;
-        height: 50px;
-     border: none;
-        padding-top: 0;
-        margin-left: 0;
         margin: auto;
+      
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .profile__edit-container{
+        width: 100%;
+        padding: 0;
+        padding-left: 38px;
+        padding-top: 26.25px;
      
       
     }
 }
-
 @media screen and (max-width: 1279px) {
     .profile__edit-button{
-        margin:auto;
-        margin-left: 254    px;
-        margin-right: 0;
-      
+      margin: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      margin-left: 10px;
+
+    }
+}
+@media screen and (max-width: 1279px) {
+    .profile__title{
+        font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 27px;
+    }
+}
+
+
+
+@media screen and (max-width: 1279px) {
+    .profile__plus-button{
+        background-image: url(./images/Add-Button-320px.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: black;
+        border: none;
+        width: 100%;
     
-        
-      
-   
+    }
+}
+@media screen and (max-width: 1279px) {
+    .profile__plus-container{
+        width: 88.12%;
+        padding-top: 36px;
       
     }
 }
 
 
+
 @media screen and (max-width: 1279px) {
     .profile__subtitle{
-        margin: 0  auto;
-        margin-top: 14px;
+        margin: 0;
+        padding: 0;
+       
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
@@ -372,43 +409,91 @@ padding-left: 27px;
     }
 }
 @media screen and (max-width: 1279px) {
-    .profile__text-container{
+    .profile__job-container{
         margin: 0  auto;
-       
-
-    
-        
-      
-   
-      
+        padding: 0;
+        width: 100%;
     }
 }
-@media screen and (max-width: 1279px) {
-    .profile__title{
-        margin: 0  auto;
-        margin-top: 26.5px;
-        font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 27px;
-text-align: center;
 
-    
-        
-      
-   
-      
+
+@media screen and (max-width: 1279px) {
+    .sites{
+    width: 100%;
     }
 }
 
 @media screen and (max-width: 1279px) {
     .sites{
-width: 100%;
-    
-        
-      
-   
-      
+        width: 88.12%;
     }
 }
+@media screen and (max-width: 1279px) {
+    .footer{
+        width: 88.12%;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .copyright{
+        width: 88.12%;
+    }
+}
+@media screen and (max-width: 1279px) {
+    .popup{
+        width: 100%;
+        height: 100%;
+        padding-top: 123px;
+    }
+}
+@media screen and (max-width: 1279px) {
+    .popup__container{
+        width: 282px;
+        height: 322px;
+    }
+}
+@media screen and (max-width: 1279px) {
+    .popup__form{
+        width: 282px;
+        height: 322px;
+    }
+}
+
+
+@media screen and (max-width: 1279px) {
+    .popup__close-icon{
+        width: 26px;
+        top: -50px;
+        right: -40px;
+        left: 295px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .form__input{
+        width: 100%;
+        top: -40px;
+        right: -40px;
+    }
+}
+
+
+@media screen and (max-width: 1279px) {
+    .form__title{
+        width: 238px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 22px;
+
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .form__button{
+        width: 100%;
+       
+    }
+}
+
