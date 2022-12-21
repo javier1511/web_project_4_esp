@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./normalize.css">
-
-</head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/vendor/index.css" />
+  <link rel="stylesheet" href="/vendor/normalize.css">
+  </head>
 <body>
-    <main class="page">
+  <main class="page">
 <div class="header">
-<img class="header__logo" src="./images/Headerlogo-min.svg" alt="">
-
-
+<img class="header__logo" src="./images/Headerlogo-min.svg" alt="shouldbealogopicture">
 </div>
-<div class="header__line"></div>
+<div class="separator"></div>
 <div class="profile">
-    <div class="profile__picture-container">
-        <img src="./images/profile-avatar-min.jpg" alt="" class="profile__picture">
-
+  <div class="profile__picture-container">
+    <img src="./images/profile-avatar-min.jpg" alt="shouldbeaprofilepicture" class="profile__picture">
     </div>
-
 <div class="profile__edit-container">
-    <h4 class="profile__title">Jacques Cousteau</h4>
+  <h4 class="profile__title">Jacques Cousteau</h4>
 <button type="button" class="profile__edit-button"></button>
 </div>
 <div class="profile__job-container">
-    <p class="profile__subtitle">Explorador</p>
+  <p class="profile__subtitle">Explorador</p>
 </div>
-
 <div class="profile__plus-container">
-    
 <button type="button" class="profile__plus-button"></button>
 </div>
-
 </div>
-
 <div class="popup">
 <div class="popup__container">
 <img src="./images/Close-Icon-min.png" alt="shouldbeaxicon" class="popup__close-icon"></a>
@@ -45,82 +36,60 @@
 <h2 class="form__title">Edit profile</h2>
 <input type="text" name="name" class="form__input" id="name"/>
 <input type="text" name="job" class="form__input" id="job"/>
-<button class="form__button">Guardar</button>
-
-
+<button id="save__button"class="form__button">Guardar</button>
 </form>
-
-
 </div>
-
-
-
 </div>
 <div class="overlay"></div>
 <div class="sites">
-    <div class="sites__picture-container">
-        <img src="./images/yosemite.jpg" alt="" class="sites__picture">
-        <div class="description__container">
-            <p class="sites__text">Valle de Yosemite</p>
-        <img src="./images/heart.svg" alt="" class="like__icon">
+  <div class="sites__picture-container">
+    <img src="./images/yosemite.jpg" alt="shouldbeaviewpicture" class="sites__picture">
+    <div class="sites__description-container">
+      <p class="sites__text">Valle de Yosemite</p>
+      <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
     </div>
     </div>
-    
 <div class="sites__picture-container">
-    <img src="./images/louise.png" alt="" class="sites__picture">
-    <div class="description__container">
-        <p class="sites__text">Lago Louise</p>
-    <img src="./images/heart.svg" alt="" class="like__icon">
+  <img src="./images/louise.png" alt="shouldbeaviewpicture" class="sites__picture">
+  <div class="sites__description-container">
+    <p class="sites__text">Lago Louise</p>
+    <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
 </div>
 </div>
-
 <div class="sites__picture-container">
-    <img src="./images/calvas.png" alt="" class="sites__picture">
-    <div class="description__container">
-        <p class="sites__text">Montañas Calvas</p>
-    <img src="./images/heart.svg" alt="" class="like__icon">
+  <img src="./images/calvas.png" alt="shouldbeaviewpicture" class="sites__picture">
+  <div class="sites__description-container">
+    <p class="sites__text">Montañas Calvas</p>
+    <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
 </div>
 </div>
-
-
 <div class="sites__picture-container">
-    <img src="./images/latemar.png" alt="" class="sites__picture">
-    <div class="description__container">
-        <p class="sites__text">Latemar</p>
-    <img src="./images/heart.svg" alt="" class="like__icon">
+  <img src="./images/latemar.png" alt="shouldbeaviewpicture" class="sites__picture">
+  <div class="sites__description-container">
+    <p class="sites__text">Latemar</p>
+    <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
 </div>
 </div>
-
-
 <div class="sites__picture-container">
-    <img src="./images/vanoise.png" alt="" class="sites__picture">
-    <div class="description__container">
-        <p class="sites__text">Vanoise Nationa...</p>
-    <img src="./images/heart.svg" alt="" class="like__icon">
+  <img src="./images/vanoise.png" alt="shouldbeaviewpicture" class="sites__picture">
+  <div class="sites__description-container">
+    <p class="sites__text">Vanoise Nationa...</p>
+    <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
 </div>
 </div>
-
-
 <div class="sites__picture-container">
-    <img src="./images/lago.png" alt="" class="sites__picture">
-    <div class="description__container">
-        <p class="sites__text">Lago di Braies</p>
-    <img src="./images/heart.svg" alt="" class="like__icon">
+  <img src="./images/lago.png" alt="shouldbeaviewpicture" class="sites__picture">
+  <div class="sites__description-container">
+    <p class="sites__text">Lago di Braies</p>
+    <img src="./images/heart.svg" alt="shouldbeaviewaheartpicture" class="like__icon">
 </div>
 </div>
-
-
 </div>
-
 <footer class="footer">
-  <p class="copyright">© 2021 Alrededor de los EEUU</p>
+  <p class="footer__copyright">© 2021 Alrededor de los EEUU</p>
 </footer>
-
-
-
 </main>
 <script src="./index.js">
-
 </script>
 </body>
 </html>
