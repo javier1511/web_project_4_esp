@@ -1,5 +1,5 @@
 .profile__plus-button {
-  background-image: url(./images/Add-Button1280px.svg);
+  background-image: url(../images/Add-Button1280px.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: black;
@@ -9,7 +9,7 @@
 }
 @media screen and (max-width: 1279px) {
   .profile__plus-button {
-    background-image: url(./images/Add-Button-320px.svg);
+    background-image: url(../images/Add-Button-320px.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: black;
