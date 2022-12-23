@@ -4,7 +4,7 @@
 }
 
 .like__icon:active {
-  background-image: url(/images/Heart-active.svg);
+  background-image: url(../../../../../../web_project_4_esp/images/Heart-active.svg);
 }
 .like__icon:hover {
   opacity: 0.4;
