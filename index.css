@@ -13,11 +13,11 @@
 @import url(./blocks/profile/__plus-container/profile__plus-container.css);
 @import url(./blocks/profile/__plus-container/__plus-button/profile__plus-button.css);
 @import url(./blocks/sites/sites.css);
-@import url(./blocks/sites/__picture-container/__description-container/sites__description-container.css);
+@import url(./blocks/sites/__description-container/sites__description-container.css);
 @import url(./blocks/sites/__picture-container/sites__picture-container.css);
 @import url(./blocks/sites/__picture-container/__picture/sites__picture.css);
-@import url(./blocks/sites/__picture-container/__description-container/__description-text/sites__description-text.css);
-@import url(./blocks/sites/__picture-container/__description-container/__description-icon/sites__description-icon.css);
+@import url(./blocks/sites/__description-container/__description-text/sites__description-text.css);
+@import url(./blocks/sites/__description-container/__description-icon/sites__description-icon.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
 @import url(./blocks/popup/popup.css);
