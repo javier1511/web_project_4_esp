@@ -1,11 +1,11 @@
-.like__icon {
+.sites__description-icon {
   width: 21px;
   height: 19px;
 }
 
-.like__icon:active {
+.sites__description-icon:active {
   background-image: url(../../../../../images/Heart-active.svg);
 }
-.like__icon:hover {
+.sites__description-icon:hover {
   opacity: 0.4;
 }
