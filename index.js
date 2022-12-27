@@ -1,5 +1,4 @@
-let overlay = document.querySelector(".overlay");
-
+const overlay = document.querySelector(".overlay");
 let popupDisplay = document.querySelector(".popup__opened");
 let profileTitle = document.querySelector(".profile__title");
 let profileJob = document.querySelector(".profile__subtitle");
