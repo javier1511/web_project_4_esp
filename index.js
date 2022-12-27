@@ -1,14 +1,14 @@
 const overlay = document.querySelector(".overlay");
-let popupDisplay = document.querySelector(".popup__opened");
-let profileTitle = document.querySelector(".profile__title");
-let profileJob = document.querySelector(".profile__subtitle");
-let inputName = document.querySelector("#name");
-let inputJob = document.querySelector("#job");
-let popupContainer = document.querySelector(".popup__container");
-let popup = document.querySelector(".popup");
-let openPopupButton = document.querySelector(".profile__edit-button");
-let closeButton = document.querySelector(".popup__close-icon");
-let saveButton = document.querySelector("#save__button");
+const popupDisplay = document.querySelector(".popup__opened");
+const profileTitle = document.querySelector(".profile__title");
+const profileJob = document.querySelector(".profile__subtitle");
+const inputName = document.querySelector("#name");
+const inputJob = document.querySelector("#job");
+const popupContainer = document.querySelector(".popup__container");
+const popup = document.querySelector(".popup");
+const openPopupButton = document.querySelector(".profile__edit-button");
+const closeButton = document.querySelector(".popup__close-icon");
+const saveButton = document.querySelector("#save__button");
 inputName.value = profileTitle.textContent;
 inputJob.value = profileJob.textContent;
 
