@@ -48,3 +48,70 @@ body {
 }
 
 
+.modal{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 1;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none ;
+}
+
+.modal__container{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__picture{
+  width: 100%;
+  max-width: 700px;
+  animation: zoom 0.3s linear;
+}
+
+.modal__text-subtitle{
+  margin-top: 1em;
+  animation: zoom 0.3s linear;
+
+}
+
+.modal__close-button{
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+ cursor: pointer;
+}
+
+.modal.appear{
+opacity: 1;
+pointer-events: all;
+}
+
+.modal.appear .modal__picture, .modal.appear .modal__text-subtitle{
+  animation: zoom 0.3s linear,
+}
+
+@keyframes zoom {
+  from {
+    transform: scale (0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+.sites__trash-icon{
+  width: 50px;
+  height: 30px;
+  background-color: black;
+  background-image: url(./images/trash.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
