@@ -41,50 +41,19 @@
     </div>
     <div class="overlay"></div>
     <div class="sites">
-      <div class="sites__picture-container">
-        <img src= "initialCards" alt="yosemite-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Valle de Yosemite</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
-      <div class="sites__picture-container">
-        <img src="./images/louise.png" alt="louise-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Lago Louise</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
-      <div class="sites__picture-container">
-        <img src="./images/calvas.png" alt="calvas-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Montañas Calvas</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
-      <div class="sites__picture-container">
-        <button class="sites__trash-icon"></button>
-        <img src="./images/latemar.png" alt="latemar-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Latemar</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
-      <div class="sites__picture-container">
-        <img src="./images/vanoise.png" alt="vanoise-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Vanoise Nationa...</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
-      <div class="sites__picture-container">
-        <img src="./images/lago.png" alt="lago-imagen-vista" class="sites__picture">
-        <div class="sites__description-container">
-          <p class="sites__description-text">Lago di Braies</p>
-          <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-        </div>
-      </div>
+     
     </div>
+    <template class="sites__picture-container" id="template__card">
+      <div class="sites__picture">
+          <img src="./trash.png" alt="" class="cards__remove-button">
+      </div>
+      <div class="sites__description-container">
+          <p class="sites__description-text">test</p>
+          <img src="" alt="" class="sites__description-icon">
+      
+      </div>
+      </template>
+    
     <div class="modal">
       <img src="./images/Close-Icon-min.png" alt="" class="modal__close-button">
          <div class="modal__container">
@@ -98,6 +67,7 @@
     </footer>
   </main>
   <script src="./index.js">
+      <script src="./index2.js">
 
   </script>
 </body>

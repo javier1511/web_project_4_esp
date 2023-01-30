@@ -3,7 +3,7 @@
   height: 19px;
 }
 
-.sites__description-icon:active {
+.sites__description-icon-active {
   background-image: url(../../../../../images/Heart-active.svg);
 }
 .sites__description-icon:hover {
