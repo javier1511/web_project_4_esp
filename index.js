@@ -33,5 +33,62 @@ function submitForm(evt) {
   profileJob.textContent = inputJob.value;
 }
 saveButton.addEventListener("click", submitForm);
+/*
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
+const images = document.querySelectorAll(".sites__picture-container img");
+  const modal = document.querySelector(".modal");
+  const modalImg = document.querySelector(".modal__picture");
+  const modalTxt = document.querySelector(".modal__text-subtitle");
+  const closeButtonModal = document.querySelector(".modal__close-button");
 
-dasdad
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      modalImg.src = image.src;
+      modalTxt.innerHTML = image.alt;
+      modal.classList.add("appear");
+
+
+      closeButtonModal.addEventListener("click", () => {
+        modal.classList.remove("appear");
+      })
+    });
+  });
+  function renderImage (){
+    const sites = document.querySelector(".sites");
+    for (const card of initialCards){
+     const div = document.createElement("div");
+     div.classList.add("sites__picture-container");
+     const image = document.createElement("img");
+     image.src = card.link;
+     image.classList.add("sites__picture");
+     div.appendChild(image);
+     sites.appendChild(div);
+ }
+    }
+
+    renderImage();
