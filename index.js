@@ -33,7 +33,7 @@ function submitForm(evt) {
   profileJob.textContent = inputJob.value;
 }
 saveButton.addEventListener("click", submitForm);
-/*
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -80,12 +80,17 @@ const images = document.querySelectorAll(".sites__picture-container img");
   });
   function renderImage (){
     const sites = document.querySelector(".sites");
+    const trashButton = document.querySelector("trash__button");
     for (const card of initialCards){
+
      const div = document.createElement("div");
-     div.classList.add("sites__picture-container");
+     div.classList.add("cards__container");
      const image = document.createElement("img");
      image.src = card.link;
-     image.classList.add("sites__picture");
+     image.classList.add("sites__picture-container");
+     const removeButton = document.createElement("img");
+     removeButton.classList.add("trash__button");
+     div.appendChild(removeButton);
      div.appendChild(image);
      sites.appendChild(div);
  }

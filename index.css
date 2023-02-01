@@ -114,3 +114,10 @@ pointer-events: all;
   flex-direction: column;
 }
 
+.sites__trash-icon{
+position: relative;
+right: -120px;
+top: 	10px;
+
+}
+
