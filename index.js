@@ -80,18 +80,30 @@ const images = document.querySelectorAll(".sites__picture-container img");
   });
   function renderImage (){
     const sites = document.querySelector(".sites");
-    const trashButton = document.querySelector("trash__button");
+    const removeButton = document.querySelector(".sites__trash-icon");
+    const loveIcon = document.querySelector(".sites__description-icon");
     for (const card of initialCards){
-
      const div = document.createElement("div");
      div.classList.add("cards__container");
-     const image = document.createElement("img");
-     image.src = card.link;
-     image.classList.add("sites__picture-container");
-     const removeButton = document.createElement("img");
-     removeButton.classList.add("trash__button");
-     div.appendChild(removeButton);
-     div.appendChild(image);
+     const container = document.createElement("div");
+     /*container.src = card.link;*/
+     container.classList.add("sites__picture-container");
+     const trashButton = document.createElement("img");
+     trashButton.classList.add("sites__trash-icon");
+     trashButton.src = removeButton.src;
+     const sitesDescription = document.createElement("div");
+     sitesDescription.classList.add("sites__description-container");
+     const text = document.createElement("p");
+     text.classList.add("sites_description-text");
+     text.textContent = card.name;
+     const likeIcon = document.createElement("img");
+     likeIcon.classList.add("sites__description-icon");
+     likeIcon.src = loveIcon.src;
+     sitesDescription.appendChild(likeIcon);
+     sitesDescription.appendChild(text);
+     div.appendChild(container);
+     container.appendChild(trashButton);
+     div.appendChild(sitesDescription);
      sites.appendChild(div);
  }
     }
