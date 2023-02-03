@@ -65,7 +65,7 @@ const images = document.querySelectorAll(".sites__picture-container img");
   const modalImg = document.querySelector(".modal__picture");
   const modalTxt = document.querySelector(".modal__text-subtitle");
   const closeButtonModal = document.querySelector(".modal__close-button");
-
+/*
   images.forEach((image) => {
     image.addEventListener("click", () => {
       modalImg.src = image.src;
@@ -78,7 +78,34 @@ const images = document.querySelectorAll(".sites__picture-container img");
       })
     });
   });
-  function renderImage (){
+*/
+  const templateCard = document.querySelector(".template").content;
+  const sites = document.querySelector(".sites");
+
+  function createCards (name,link){
+    const card = templateCard.cloneNode(true);
+    card.querySelector(".sites__picture").src = link;
+    card.querySelector(".sites__description-text").textContent = name;
+    const cardLink = card.querySelector(".sites__picture");
+    cardLink.addEventListener("click", () =>{
+      modalImg.src = link;
+      modalTxt.innerHTML = name;
+      modal.classList.add("appear");
+      closeButtonModal.addEventListener("click", () => {
+        modal.classList.remove("appear");
+      })
+    })
+    return card
+  }
+
+  initialCards.forEach( function (element) {
+   const card = createCards(element.name,element.link);
+   sites.append(card);
+  }
+
+
+  )
+  /*function renderImage (){
     const sites = document.querySelector(".sites");
     const removeButton = document.querySelector(".sites__trash-icon");
     const loveIcon = document.querySelector(".sites__description-icon");
@@ -86,7 +113,7 @@ const images = document.querySelectorAll(".sites__picture-container img");
      const div = document.createElement("div");
      div.classList.add("cards__container");
      const container = document.createElement("div");
-     /*container.src = card.link;*/
+     /*container.src = card.link;
      container.classList.add("sites__picture-container");
      const trashButton = document.createElement("img");
      trashButton.classList.add("sites__trash-icon");
@@ -107,5 +134,5 @@ const images = document.querySelectorAll(".sites__picture-container img");
      sites.appendChild(div);
  }
     }
+    renderImage();*/
 
-    renderImage();
