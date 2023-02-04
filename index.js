@@ -101,10 +101,8 @@ const images = document.querySelectorAll(".sites__picture-container img");
   initialCards.forEach( function (element) {
    const card = createCards(element.name,element.link);
    sites.append(card);
-  }
-
-
-  )
+  })
+  test
   /*function renderImage (){
     const sites = document.querySelector(".sites");
     const removeButton = document.querySelector(".sites__trash-icon");
