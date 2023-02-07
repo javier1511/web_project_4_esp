@@ -28,6 +28,7 @@
         <button type="button" class="profile__plus-button"></button>
       </div>
     </div>
+
     <div class="popup">
       <div class="popup__container">
         <img src="./images/Close-Icon-min.png" alt="cerrar-icono" class="popup__close-icon">
@@ -36,6 +37,17 @@
           <input type="text" name="name" class="form__input" id="name">
           <input type="text" name="job" class="form__input" id="job">
           <button id="save__button" class="form__button">Guardar</button>
+        </form>
+      </div>
+    </div>
+    <div class="adder">
+      <div class="adder__container">
+        <img src="./images/Close-Icon-min.png" id="adder__close-icon" alt="cerrar-icono" class="popup__close-icon">
+        <form class="form" id="adder__form">
+          <h2 class="form__title">Nuevo Lugar</h2>
+          <input type="text" name="name" class="form__input" id="title" placeholder="Titulo">
+          <input type="text" name="job" class="form__input" id="url" placeholder="Enlace de imagen">
+          <button id="adder__submit" class="form__button">Crear</button>
         </form>
       </div>
     </div>
@@ -70,8 +82,7 @@
       <p class="footer__copyright">© 2021 Alrededor de los EEUU</p>
     </footer>
   </main>
-  <script src="./index.js">
-
-  </script>
+  <script src="./index.js"></script>
+  <script src="./index2.js"></script>
 </body>
 </html>

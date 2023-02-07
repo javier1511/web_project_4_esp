@@ -118,4 +118,47 @@ pointer-events: all;
 position: absolute;
 }
 
+.adder{
+  padding-top: 195px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  display: none;
+  z-index: 1;
+}
 
+.adder__opened{
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+@media screen and (max-width: 1279px) {
+  .adder {
+    width: 100%;
+    height: 100%;
+    padding-top: 123px;
+  }
+}
+
+.adder__container{
+  background-color: #fff;
+  width: 358px;
+  height: 330px;
+  border-radius: 10px;
+  position: relative;
+  padding: 34px 36px;
+
+}
+
+@media screen and (max-width: 1279px) {
+  .adder__container {
+    width: 238px;
+    height: 322px;
+    padding: 0px 22px 0px 22px;
+  }
+}
