@@ -13,8 +13,8 @@
 @media screen and (max-width: 1279px) {
   .modal__close-button {
     position: absolute;
-    top: 279px;
-    right: 30px;
+    top: 261px;
+    right: 8px;
     cursor: pointer;
   }
 }
