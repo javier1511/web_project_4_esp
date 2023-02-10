@@ -14,8 +14,10 @@
 @import url(./blocks/profile/__plus-container/profile__plus-container.css);
 @import url(./blocks/profile/__plus-container/__plus-button/profile__plus-button.css);
 @import url(./blocks/sites/sites.css);
+@import url(./blocks/sites/__container/cards__container.css);
 @import url(./blocks/sites/__description-container/sites__description-container.css);
 @import url(./blocks/sites/__picture-container/sites__picture-container.css);
+@import url(./blocks/sites/__trash-icon/sites__trash-icon.css);
 @import url(./blocks/sites/__picture-container/__picture/sites__picture.css);
 @import url(./blocks/sites/__description-container/__description-text/sites__description-text.css);
 @import url(./blocks/sites/__description-container/__description-icon/sites__description-icon.css);
@@ -30,8 +32,15 @@
 @import url(./blocks/popup/form/__title/form__title.css);
 @import url(./blocks/popup/form/__input/form__input.css);
 @import url(./blocks/popup/form/__button/form__button.css);
-
-
+@import url(./blocks/modal/modal.css);
+@import url(./blocks/modal/__container/modal__container.css);
+@import url(./blocks/modal/__picture/modal__picture.css);
+@import url(./blocks/modal/__text-subtitle/modal__text-subtitle.css);
+@import url(./blocks/modal/__close-button/modal__close-button.css);
+@import url(./blocks/modal/__appear/appear.css);
+@import url(./blocks/adder/adder.css);
+@import url(./blocks/adder/__opened/adder__opened.css);
+@import url(./blocks/adder/__container/adder__container.css);
 
 
 
@@ -45,120 +54,4 @@ body {
   font-family: "Inter";
   color: #ffffff;
   margin: 0 ;
-}
-
-
-.modal{
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  z-index: 1;
-  overflow: auto;
-  opacity: 0;
-  pointer-events: none ;
-}
-
-.modal__container{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal__picture{
-  width: 100%;
-  max-width: 700px;
-  animation: zoom 0.3s linear;
-}
-
-.modal__text-subtitle{
-  margin-top: 1em;
-  animation: zoom 0.3s linear;
-
-}
-
-.modal__close-button{
-  position: absolute;
-  top: 1.0em;
-  right: 1em;
- cursor: pointer;
-}
-
-.modal.appear{
-opacity: 1;
-pointer-events: all;
-}
-
-.modal.appear .modal__picture, .modal.appear .modal__text-subtitle{
-  animation: zoom 0.3s linear,
-}
-
-@keyframes zoom {
-  from {
-    transform: scale (0);
-  }
-  to{
-    transform: scale(1);
-  }
-}
-
-.cards__container{
-  width: 282px;
-  height: 361px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sites__trash-icon{
-position: absolute;
-}
-
-.adder{
-  padding-top: 195px;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  display: none;
-  z-index: 1;
-}
-
-.adder__opened{
-  display: block;
-  opacity: 1;
-  pointer-events: all;
-}
-@media screen and (max-width: 1279px) {
-  .adder {
-    width: 100%;
-    height: 100%;
-    padding-top: 123px;
-  }
-}
-
-.adder__container{
-  background-color: #fff;
-  width: 358px;
-  height: 330px;
-  border-radius: 10px;
-  position: relative;
-  padding: 34px 36px;
-
-}
-
-@media screen and (max-width: 1279px) {
-  .adder__container {
-    width: 238px;
-    height: 322px;
-    padding: 0px 22px 0px 22px;
-  }
 }

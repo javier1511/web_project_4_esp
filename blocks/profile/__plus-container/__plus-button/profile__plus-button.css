@@ -6,6 +6,7 @@
   width: 150px;
   height: 50px;
   border: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 1279px) {
   .profile__plus-button {

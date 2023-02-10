@@ -29,12 +29,20 @@ const initialCards = [
     const modalImg = document.querySelector(".modal__picture");
     const modalTxt = document.querySelector(".modal__text-subtitle");
     const closeButtonModal = document.querySelector(".modal__close-button");
-  
+
     const templateCard = document.querySelector(".template").content;
     const sites = document.querySelector(".sites");
-  
+
     function createCards (name,link){
       const card = templateCard.cloneNode(true);
+      const likeButton = card.querySelector(".sites__description-icon");
+      likeButton.addEventListener("click", function (evt){
+        likeButton.classList.toggle("sites__description-icon-active");
+      });
+      const deleteCard = card.querySelector(".sites__trash-icon");
+      deleteCard.addEventListener("click", function (evt){
+        const cardToRemove = deleteCard.closest(".cards__container").remove();
+      });
       card.querySelector(".sites__picture").src = link;
       card.querySelector(".sites__description-text").textContent = name;
       const cardLink = card.querySelector(".sites__picture");
@@ -54,7 +62,7 @@ const initialCards = [
     initialCards.forEach( function (element) {
      const card = createCards(element.name,element.link);
      sites.append(card);
-    }); 
+    });
 
     const addCardButton = document.querySelector(".profile__plus-button");
     const adder = document.querySelector(".adder");
@@ -67,61 +75,19 @@ const initialCards = [
 
    addCardButton.addEventListener("click", toggleAdder);
    adderCloseButton.addEventListener("click", toggleAdder);
-/*
-   const adderForm = document.getElementById("adder__form");
 
-   adderForm.addEventListener("submit", function(evt){
-    evt.preventDefault();
-    const adderTitle = document.getElementById("title").value;
-    const adderUrl =document.getElementById("url");
-    const card = templateCard.cloneNode(true);
-    card.querySelector(".sites__picture").src = evt.target.image.value;
-    card.querySelector(".sites__description-text").textContent = evt.target.elements.adderTitle.value;
-    card.querySelector(".sites__description-icon").addEventListener("click",function(evt){
-        likeFunction(evt)
-    });
-card.setAttribute("name", evt.target.elements.adderTitle.value);
-sites.prepend(card);
-adder.classList.remove("adder__opened");
-evt.target.reset();
-   }); */
-
-   /*create a div and add it to the webpage */
+//añadir cards//
+const adderTitle = document.querySelector("#title").value;
+const adderUrl =document.querySelector("#url").value;
 
 
-  /*
-  /* 3. create a displayCard function */
 
-  function displayCard(){
-    
-  }
 
-  const handleCardFormSubmit =  (evt) => {
-  evt.preventDefault() 
-  renderCard() 
-  /*toggleAdder()*/
+  adder.addEventListener("submit", (evt) => {
+    evt.preventDefault()
+    console.log(adderUrl);
+   const bubble = createCards(adderTitle, adderUrl);
+   sites.prepend(bubble);
+   toggleAdder()
 
-  }
-
-  function renderCard(){
-    const div = document.createElement("div");
-    div.classList.add("cards__container");
-   sites.appendChild(div);
-   const adderTitle = document.getElementById("title").value;
-    const adderUrl = document.getElementById("url").value;
-    let html = `<div class="cards__container">
-    <div class="sites__picture-container">
-      <img src=${adderUrl} alt="" class="sites__picture">
-      <img src= "./images/trash.png" alt="yosemite-imagen-vista" class="sites__trash-icon">
-    </div>
-      <div class="sites__description-container">
-        <p class="sites__description-text">${adderTitle}</p>
-        <img src="./images/heart.svg" alt="me-gusta-imagen" class="sites__description-icon">
-      </div>
-  </div>`;
-
-  div.insertAdjacentHTML("beforeend", html);
-  }
-
- const  adderSubmmit = document.getElementById("adder__submit");
- adderSubmmit.addEventListener("click", handleCardFormSubmit);
+  });
