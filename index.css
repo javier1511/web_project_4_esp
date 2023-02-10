@@ -41,6 +41,7 @@
 @import url(./blocks/adder/adder.css);
 @import url(./blocks/adder/__opened/adder__opened.css);
 @import url(./blocks/adder/__container/adder__container.css);
+@import url(./blocks/adder/__close-icon/adder__close-icon.css);
 
 
 
