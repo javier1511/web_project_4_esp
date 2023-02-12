@@ -12,20 +12,20 @@ const saveButton = document.querySelector("#save__button");
 inputName.value = profileTitle.textContent;
 inputJob.value = profileJob.textContent;
 
-function toggle() {
+function togglePopupVisibility() {
   popup.classList.toggle("popup__opened");
   overlay.classList.toggle("overlay__visible");
 }
 
-openPopupButton.addEventListener("click", toggle);
-closeButton.addEventListener("click", toggle);
+openPopupButton.addEventListener("click", togglePopupVisibility);
+closeButton.addEventListener("click", togglePopupVisibility);
 
-function saveForm() {
+function openPopup() {
   popup.classList.toggle("popup__opened");
   overlay.classList.toggle("overlay__visible");
 }
 
-saveButton.addEventListener("click", saveForm);
+saveButton.addEventListener("click", openPopup);
 
 function submitForm(evt) {
   evt.preventDefault();
