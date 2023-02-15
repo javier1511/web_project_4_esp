@@ -20,12 +20,7 @@ function togglePopupVisibility() {
 openPopupButton.addEventListener("click", togglePopupVisibility);
 closeButton.addEventListener("click", togglePopupVisibility);
 
-function openPopup() {
-  popup.classList.toggle("popup__opened");
-  overlay.classList.toggle("overlay__visible");
-}
-
-saveButton.addEventListener("click", openPopup);
+saveButton.addEventListener("click", togglePopupVisibility);
 
 function submitForm(evt) {
   evt.preventDefault();
@@ -66,7 +61,6 @@ const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__picture");
 const modalTxt = document.querySelector(".modal__text-subtitle");
 const closeButtonModal = document.querySelector(".modal__close-button");
-
 const templateCard = document.querySelector(".template").content;
 const sites = document.querySelector(".sites");
 
@@ -76,6 +70,7 @@ function createCards (name, link) {
   likeButton.addEventListener("click", function (evt) {
     likeButton.classList.toggle("sites__description-icon-active");
   });
+
   const deleteCard = card.querySelector(".sites__trash-icon");
   deleteCard.addEventListener("click", function (evt) {
     const cardToRemove = deleteCard.closest(".cards__container").remove();
@@ -93,10 +88,12 @@ function createCards (name, link) {
     });
   });
   return card;
-}
+};
+
 const likeFunction = function (evt) {
   evt.target.classList.toggle("sites__description-icon-active");
 };
+
 initialCards.forEach(function (element) {
   const card = createCards(element.name, element.link);
   sites.append(card);
@@ -109,7 +106,7 @@ const adderCloseButton = document.getElementById("adder__close-icon");
 function addingCardPopupVisibility() {
   addingCardForm.classList.toggle("adder__opened");
   overlay.classList.toggle("overlay__visible");
-}
+};
 
 addCardButton.addEventListener("click", addingCardPopupVisibility);
 adderCloseButton.addEventListener("click", addingCardPopupVisibility);
