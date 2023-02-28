@@ -65,6 +65,7 @@ font-size: 12px;
 line-height: 15px;
 margin-left: 0;
 color: #FF0000;
+display: none;
 
 }
 
@@ -73,4 +74,12 @@ color: #FF0000;
 
   /* El borde inferior se volverá rojo cada vez que
   los datos introducidos no sean válidos */
-} 
+}
+
+.form__error-message_active{
+  display: block;
+}
+
+.form__submit_inactive{
+  background-color: #FF0000;
+}
