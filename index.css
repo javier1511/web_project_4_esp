@@ -56,3 +56,21 @@ body {
   color: #ffffff;
   margin: 0;
 }
+
+.form__error-message{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+margin-left: 0;
+color: #FF0000;
+
+}
+
+.form__input_type_error {
+  border-bottom-color: red;
+
+  /* El borde inferior se volverá rojo cada vez que
+  los datos introducidos no sean válidos */
+} 

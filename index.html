@@ -18,7 +18,7 @@
         <img src="./images/profile-avatar-min.jpg" alt="imagen-de-perfil" class="profile__picture">
       </div>
       <div class="profile__edit-container">
-        <h4 class="profile__title">JacqueSs Cousteau</h4>
+        <h4 class="profile__title">Jacques Cousteau</h4>
         <button type="button" class="profile__edit-button"></button>
       </div>
       <div class="profile__job-container">
@@ -34,10 +34,13 @@
         <img src="./images/Close-Icon-min.png" alt="cerrar-icono" class="popup__close-icon">
         <form class="form">
           <h2 class="form__title">Edit profile</h2>
-          <input type="text" name="name" class="form__input" id="name">
-          <input type="text" name="job" class="form__input" id="job">
-          <button id="save__button" class="form__button">Guardar</button>
+          <input type="text" name="name" class="form__input" id="name" required minlength="2" maxlength="40">
+          <span class="form__input_type_error" id="name-error"></span>
+          <input type="text" name="job" class="form__input" id="job" required minlength="2" maxlength="200">
+          <span class="form__input_type_error" id="job-error"></span>
+          <button id="save__button" class="form__button" disabled>Guardar</button>
         </form>
+        
       </div>
     </div>
     <div class="adder">
@@ -81,6 +84,6 @@
     </footer>
   </main>
   <script src="./index.js"></script>
-  <script src="./index2.js"></script>
+  <script src="./validation.js"></script>
 </body>
 </html>

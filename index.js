@@ -90,6 +90,29 @@ function createCards (name, link) {
   return card;
 };
 
+function closeModal() {
+  modal.classList.remove('appear');
+}
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// Cierra el modal cuando se presiona la tecla escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
+// Cierra el modal cuando se hace clic en el botón de cerrar
+closeButton.addEventListener('click', () => {
+  closeModal();
+});
+
+
 const likeFunction = function (evt) {
   evt.target.classList.toggle("sites__description-icon-active");
 };
