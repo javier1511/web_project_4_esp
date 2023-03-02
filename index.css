@@ -42,6 +42,10 @@
 @import url(./blocks/adder/__opened/adder__opened.css);
 @import url(./blocks/adder/__container/adder__container.css);
 @import url(./blocks/adder/__close-icon/adder__close-icon.css);
+@import url(./blocks/popup/form/__error-message/form__error-message.css);
+@import url(./blocks/popup/form/__input/__input_type_error/form__input_type_error.css);
+@import url(./blocks/popup/form/__submit_inactive/form__submit_inactive.css);
+@import url(./blocks/popup/form/__error-message_active/form__error-message_active.css);
 
 
 
@@ -57,35 +61,11 @@ body {
   margin: 0;
 }
 
-.form__error-message{
-  font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-margin-left: 0;
-color: #FF0000;
-display: none;
-
-}
-
-.form__input_type_error {
-  border-bottom-color: red;
-
-  /* El borde inferior se volverá rojo cada vez que
-  los datos introducidos no sean válidos */
-}
-
-.form__error-message_active{
-  display: block;
-}
 
 
 
-.form__submit_inactive {
-  background-color: #ddd;
-  color: #aaa;
-  cursor: not-allowed;
-  opacity: 0.5;
-  pointer-events: none;
-}
+
+
+
+
+

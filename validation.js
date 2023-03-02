@@ -62,8 +62,8 @@ const setEventListeners = (formElement) => {
 };
 
 
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(".form"));
+const enableValidation = (settings) => {
+  const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
     setEventListeners(formElement);
     formElement.addEventListener("submit", function (evt) {
