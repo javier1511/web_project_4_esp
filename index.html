@@ -38,7 +38,7 @@
           <span class="form__error-message" id="name-error"></span>
           <input type="text" name="job" class="form__input" id="job" required minlength="2" maxlength="200">
           <span class="form__error-message" id="job-error"></span>
-          <button id="save__button" class="form__button">Guardar</button>
+          <button id="save__button" class="form__button form__submit_inactive" >Guardar</button>
         </form>
 
       </div>
@@ -46,11 +46,13 @@
     <div class="adder">
       <div class="adder__container">
         <img src="./images/Close-Icon-min.png" id="adder__close-icon" alt="cerrar-icono" class="adder__close-icon">
-        <form class="form" id="adder__form">
+        <form class="form" id="adder__form" novalidate>
           <h2 class="form__title">Nuevo Lugar</h2>
-          <input type="text" name="name" class="form__input" id="title" placeholder="Titulo">
-          <input type="text" name="job" class="form__input" id="url" placeholder="Enlace de imagen">
-          <button id="adder__submit" class="form__button">Crear</button>
+          <input type="text" name="name" class="form__input" id="title" placeholder="Titulo" required minlength="2" maxlength="30">
+          <span class="form__error-message" id="title-error"></span>
+          <input type="url" name="job" class="form__input" id="url" placeholder="Enlace de imagen" required>
+          <span class="form__error-message" id="url-error"></span>
+          <button id="adder__submit" class="form__button form__submit_inactive" >Crear</button>
         </form>
       </div>
     </div>

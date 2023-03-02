@@ -93,12 +93,12 @@ function createCards (name, link) {
 function closeModal() {
   modal.classList.remove('appear');
 }
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
+document.addEventListener('click', (event) => {
+  if (event.target === modal) {
     closeModal();
   }
 });
+
 
 // Cierra el modal cuando se presiona la tecla escape
 document.addEventListener('keydown', (e) => {
@@ -106,6 +106,13 @@ document.addEventListener('keydown', (e) => {
     closeModal();
   }
 });
+
+modal.addEventListener('click', (e) => {
+  if (e.target.classList.contains("modal__container")) {
+    closeModal();
+  }
+});
+
 
 // Cierra el modal cuando se hace clic en el botón de cerrar
 closeButton.addEventListener('click', () => {
