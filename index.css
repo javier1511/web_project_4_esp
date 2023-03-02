@@ -44,7 +44,7 @@
 @import url(./blocks/adder/__close-icon/adder__close-icon.css);
 @import url(./blocks/popup/form/__error-message/form__error-message.css);
 @import url(./blocks/popup/form/__input/__input_type_error/form__input_type_error.css);
-@import url(./blocks/popup/form/__submit_inactive/form__submit_inactive.css);
+@import url(./blocks/popup/form/__submit-inactive/form__submit-inactive.css);
 @import url(./blocks/popup/form/__error-message_active/form__error-message_active.css);
 
 
