@@ -25,6 +25,12 @@ const initialCards = [
   },
 ];
 
+const popupElement = document.querySelector(".modal");
+const popupImage = document.querySelector(".modal__picture");
+const popupCloseButton = document.querySelector(".modal__close-button");
+const popupText = document.querySelector(".modal__text-subtitle");
+
+
 class Card {
   constructor(data, cardSelector){
     this.name = data.name;
@@ -45,13 +51,15 @@ class Card {
     this._element.querySelector(".sites__picture").src = this.link;
     this._element.querySelector(".sites__description-text").textContent = this.name;
 
+    this._setEventListeners();
     return this._element;
   }
   _handleOpenPopup() {
-    popupImage.src = this._link;
+    popupText.textContent = this.name;
+    popupImage.src = this.link;
     popupElement.classList.add("appear");
   }
-  _handleClosePopup (){
+  _handleClosePopup() {
     popupImage.src = "";
     popupElement.classList.remove("appear");
   }
@@ -59,7 +67,7 @@ class Card {
     this._element.addEventListener("click", () => {
       this._handleOpenPopup();
     });
-    popup.CloseButton.addEventListener("click", () => {
+    popupCloseButton.addEventListener("click", () => {
       this._handleClosePopup()
     });
   }
