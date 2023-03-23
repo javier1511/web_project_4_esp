@@ -30,32 +30,8 @@ function submitForm(evt) {
 saveButton.addEventListener("click", submitForm);
 
 
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-];
+
+
 const images = document.querySelectorAll(".sites__picture-container img");
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__picture");
@@ -63,6 +39,8 @@ const modalTxt = document.querySelector(".modal__text-subtitle");
 const closeButtonModal = document.querySelector(".modal__close-button");
 const templateCard = document.querySelector(".template").content;
 const sites = document.querySelector(".sites");
+
+/*
 
 function createCards (name, link) {
   const card = templateCard.cloneNode(true);
@@ -75,7 +53,7 @@ function createCards (name, link) {
   deleteCard.addEventListener("click", function (evt) {
     const cardToRemove = deleteCard.closest(".cards__container").remove();
   });
-
+/*
   card.querySelector(".sites__picture").src = link;
   card.querySelector(".sites__description-text").textContent = name;
   const cardLink = card.querySelector(".sites__picture");
@@ -118,16 +96,13 @@ modal.addEventListener('click', (e) => {
 closeButton.addEventListener('click', () => {
   closeModal();
 });
-
+*/
 
 const likeFunction = function (evt) {
   evt.target.classList.toggle("sites__description-icon-active");
 };
 
-initialCards.forEach(function (element) {
-  const card = createCards(element.name, element.link);
-  sites.append(card);
-});
+
 
 const addCardButton = document.querySelector(".profile__plus-button");
 const addingCardForm = document.querySelector(".adder");
