@@ -64,7 +64,7 @@ class Card {
     popupElement.classList.remove("appear");
   }
   _setEventListeners(){
-    this._element.addEventListener("click", () => {
+    this._element.querySelector(".sites__picture").addEventListener("click", () => {
       this._handleOpenPopup();
     });
     popupCloseButton.addEventListener("click", () => {

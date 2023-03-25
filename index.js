@@ -40,7 +40,7 @@ const closeButtonModal = document.querySelector(".modal__close-button");
 const templateCard = document.querySelector(".template").content;
 const sites = document.querySelector(".sites");
 
-/*
+
 
 function createCards (name, link) {
   const card = templateCard.cloneNode(true);
@@ -53,7 +53,7 @@ function createCards (name, link) {
   deleteCard.addEventListener("click", function (evt) {
     const cardToRemove = deleteCard.closest(".cards__container").remove();
   });
-/*
+
   card.querySelector(".sites__picture").src = link;
   card.querySelector(".sites__description-text").textContent = name;
   const cardLink = card.querySelector(".sites__picture");
@@ -96,7 +96,7 @@ modal.addEventListener('click', (e) => {
 closeButton.addEventListener('click', () => {
   closeModal();
 });
-*/
+
 
 const likeFunction = function (evt) {
   evt.target.classList.toggle("sites__description-icon-active");
