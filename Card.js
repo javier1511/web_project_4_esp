@@ -31,11 +31,13 @@ const popupCloseButton = document.querySelector(".modal__close-button");
 const popupText = document.querySelector(".modal__text-subtitle");
 
 
-class Card {
+export class Card {
   constructor(data, cardSelector){
     this.name = data.name;
     this.link = data.link;
     this._cardSelector = cardSelector;
+
+    this._handleClickClosePopupOutsideElement();
   }
 
   _getTemplate() {
@@ -77,15 +79,25 @@ class Card {
     popupImage.src = "";
     popupElement.classList.remove("appear");
   }
-  __handleClickClosePopupOutsideElement(){
-    this._popupElement.addEventListener("click", (evt) => {
+  _handleClickClosePopupOutsideElement(){
+    popupElement.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("modal__container")) {
         this._handleClosePopup();
       }
     });
   }
 
+  _handleKeyDown(evt) {
+    if (evt.key === 'Escape') {
+      this._handleClosePopup();
+    }
+  }
+
+
   _setEventListeners(){
+    document.addEventListener('keydown', (evt) => {
+      this._handleKeyDown(evt);
+    });
     this._picture.addEventListener("click", () => {
       this._handleOpenPopup();
     });
@@ -106,3 +118,4 @@ initialCards.forEach((item) => {
   const cardElement = card.generateCard();
   document.querySelector(".sites").append(cardElement);
 });
+
