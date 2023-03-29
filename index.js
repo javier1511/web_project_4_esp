@@ -41,7 +41,7 @@ const templateCard = document.querySelector(".template").content;
 const sites = document.querySelector(".sites");
 
 
-
+/*
 function createCards (name, link) {
   const card = templateCard.cloneNode(true);
   const likeButton = card.querySelector(".sites__description-icon");

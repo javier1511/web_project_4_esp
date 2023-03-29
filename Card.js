@@ -47,28 +47,56 @@ class Card {
 
   generateCard(){
     this._element = this._getTemplate();
+    this._trashIcon = this._element.querySelector(".sites__trash-icon");
+    this._descriptionIcon = this._element.querySelector(".sites__description-icon");
+    this._picture = this._element.querySelector(".sites__picture");
+    this._descriptionText = this._element.querySelector(".sites__description-text");
+    this._picture.src = this.link;
+    this._descriptionText.textContent = this.name;
 
-    this._element.querySelector(".sites__picture").src = this.link;
-    this._element.querySelector(".sites__description-text").textContent = this.name;
 
     this._setEventListeners();
     return this._element;
   }
+
+  _cardRemove(){
+    this._element.remove();
+  }
+
+  _cardLike(evt){
+    evt.target.classList.toggle("sites__description-icon-active");
+  }
+
   _handleOpenPopup() {
     popupText.textContent = this.name;
     popupImage.src = this.link;
     popupElement.classList.add("appear");
   }
+
   _handleClosePopup() {
     popupImage.src = "";
     popupElement.classList.remove("appear");
   }
+  __handleClickClosePopupOutsideElement(){
+    this._popupElement.addEventListener("click", (evt) => {
+      if (evt.target.classList.contains("modal__container")) {
+        this._handleClosePopup();
+      }
+    });
+  }
+
   _setEventListeners(){
-    this._element.querySelector(".sites__picture").addEventListener("click", () => {
+    this._picture.addEventListener("click", () => {
       this._handleOpenPopup();
     });
+    this._trashIcon.addEventListener("click", () => {
+      this._cardRemove();
+    });
+    this._descriptionIcon.addEventListener("click", (evt) => {
+      this._cardLike(evt);
+    });
     popupCloseButton.addEventListener("click", () => {
-      this._handleClosePopup()
+      this._handleClosePopup();
     });
   }
 }
@@ -76,5 +104,5 @@ class Card {
 initialCards.forEach((item) => {
   const card = new Card(item, ".template");
   const cardElement = card.generateCard();
- document.querySelector(".sites").append(cardElement);
+  document.querySelector(".sites").append(cardElement);
 });
