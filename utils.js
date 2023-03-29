@@ -37,8 +37,6 @@ adderCloseButton.addEventListener("click", addingCardPopupVisibility);
 
 addingCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  console.log(adderUrl.value);
-  console.log(adderTitle);
   const data = {
     name:adderTitle.value,link:adderUrl.value
   }
