@@ -13,3 +13,5 @@ export const overlay = document.querySelector(".overlay");
 export const adderTitle = document.querySelector("#title");
 export const adderUrl = document.querySelector("#url");
 export const sites = document.querySelector(".sites");
+export const mySitesPicture = document.querySelector(".sites__picture");
+

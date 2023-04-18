@@ -1,0 +1,7 @@
+.overlay__visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    display: block;
+  }
+  
