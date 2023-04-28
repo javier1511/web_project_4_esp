@@ -1,5 +1,3 @@
-import { MasterPopup } from "./Popup.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const userData = {
       inputName: "#name",
@@ -16,15 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
           this.profileJob = document.querySelector(userData.profileJob);
           this.inputName.value = this.profileTitle.textContent;
           this.inputJob.value = this.profileJob.textContent;
-
-          // Crear una instancia de la clase MasterPopup
-          const myPopup = new MasterPopup(userData.popup);
-
-          this.submitButton.addEventListener("click", (evt) => {
-              // Llamar al método closePopup() en la instancia de MasterPopup
-              myPopup.closePopup();
-              this.submitForm(evt);
-          });
       }
       submitForm(evt) {
           evt.preventDefault();
@@ -35,3 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const userInfo = new UserInfo(userData);
 });
+
