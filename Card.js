@@ -1,3 +1,5 @@
+import { PopupWithImage } from "./PopupWithImage.js";
+
 export class Card {
   constructor(data, cardSelector) {
     this.name = data.name;
@@ -7,7 +9,8 @@ export class Card {
 
   _getTemplate() {
     const cardElement = document
-    .querySelector(this._cardSelector).content.querySelector(".cards__container")
+      .querySelector(this._cardSelector)
+      .content.querySelector(".cards__container")
       .cloneNode(true);
 
     return cardElement;
@@ -45,7 +48,9 @@ export class Card {
     this._descriptionIcon.addEventListener("click", (evt) => {
       this._cardLike(evt);
     });
+    this._picture.addEventListener("click", (evt) => {
+      const openMyPopup = new PopupWithImage();
+      openMyPopup.handleOpenPopup(evt.target.src, evt.target.alt);
+    });
   }
 }
-
-

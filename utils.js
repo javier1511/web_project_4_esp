@@ -19,12 +19,4 @@ addingCardForm.addEventListener("submit", (evt) => {
   sites.prepend(cardsSource);
 });
 
-/*
-const card = new Card(data, ".template", (evt) =>{
-  const data = {
-   card : ".sites__picture"
-  }
-  const openCardModal = new PopupWithImage(".sites__picture");
-  openCardModal.openPopup(evt);
-})
-/*
+
