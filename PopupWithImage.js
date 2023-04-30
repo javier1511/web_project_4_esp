@@ -1,5 +1,4 @@
 import { MasterPopup } from "./Popup.js";
-import initialCards from "./constants.js";
 
 const popupImage = document.querySelector(".modal__picture");
 const popupText = document.querySelector(".modal__text-subtitle");
@@ -7,11 +6,19 @@ const popupText = document.querySelector(".modal__text-subtitle");
 export class PopupWithImage extends MasterPopup {
   constructor() {
     super(".modal");
+    this.popupImage = document.querySelector(".modal__picture");
   }
+
   handleOpenPopup(src, alt) {
     popupText.textContent = alt;
-    popupImage.src = src;
+    this.popupImage.src = src;
     super.openPopup();
+  }
+
+  handleClickClosePopupOutsideElement(evt) {
+    if (!evt.target.closest(".modal__picture")) {
+      super.closePopup();
+    }
   }
 }
 
@@ -29,3 +36,5 @@ document.addEventListener("keydown", (evt) => {
 popupWithImage.element.addEventListener("click", (evt) => {
   popupWithImage.handleClickClosePopupOutsideElement(evt);
 });
+
+

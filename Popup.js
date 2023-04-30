@@ -7,7 +7,9 @@ export class MasterPopup {
 
   openPopup() {
     this.element.classList.add("popup__opened");
-    this.element.classList.add("overlay__visible");
+    const overlay = document.querySelector('.overlay');
+    overlay.style.display = 'block';
+    overlay.style.opacity = 0.5;
   }
 
   handleClose(evt) {
@@ -18,15 +20,22 @@ export class MasterPopup {
 
   closePopup() {
     this.element.classList.remove("popup__opened");
-    this.element.classList.remove("overlay__visible");
+    const overlay = document.querySelector('.overlay');
+    overlay.style.display = 'none';
+    
+    const form = this.element.querySelector('form');
+    if (form) {
+      form.reset();
+    }
   }
 
-  handleClickClosePopupOutsideElement(evt){
-    if (evt.target.classList.contains("popup__opened")){
+  handleClickClosePopupOutsideElement(evt) {
+    if (evt.target.classList.contains("popup__opened")) {
       this.closePopup();
     }
   }
 }
+
 
 
 class Popup extends MasterPopup {

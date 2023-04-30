@@ -1,7 +1,7 @@
 .overlay__visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    display: block;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 99;
   }
   

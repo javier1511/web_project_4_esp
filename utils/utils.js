@@ -1,8 +1,7 @@
 
 
 import { Card } from "./Card.js";
-import {profileTitle, profileJob, inputName, inputJob, popup, openPopupButton, closeButton,
-  saveButton, adderCloseButton, addCardButton, addingCardForm, overlay, adderTitle, adderUrl, sites, mySitesPicture } from "./constants.js"
+import {profileTitle, profileJob, inputName, inputJob, popup, openPopupButton, closeButton,addingCardForm, adderTitle, adderUrl, sites } from "./constants.js"
   inputName.value = profileTitle.textContent;
   inputJob.value = profileJob.textContent;
 
