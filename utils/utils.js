@@ -1,6 +1,6 @@
 
 
-import { Card } from "./Card.js";
+import { Card } from "../components/Card.js";
 import {profileTitle, profileJob, inputName, inputJob, popup, openPopupButton, closeButton,addingCardForm, adderTitle, adderUrl, sites } from "./constants.js"
   inputName.value = profileTitle.textContent;
   inputJob.value = profileJob.textContent;

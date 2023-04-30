@@ -1,6 +1,6 @@
-import { Section} from "./Section.js"
-import { Card } from "./Card.js";
-import initialCards from "./utils/constants.js";
+import { Section} from "../components/Section.js"
+import { Card } from "../components/Card.js";
+import initialCards from "../utils/constants.js";
 
 
 const cardlist = new Section({
