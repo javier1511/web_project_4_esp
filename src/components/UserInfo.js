@@ -1,15 +1,4 @@
-import { MasterPopup } from "./Popup.JS";
-
-document.addEventListener("DOMContentLoaded", () => {
-  const userData = {
-    inputName: "#name",
-    inputJob: "#job",
-    profileTitle: ".profile__title",
-    profileJob: ".profile__subtitle",
-    saveButton: "#save__button"
-  };
-
-  class UserInfo {
+  export default class UserInfo {
     constructor(userData, popup) {
       this.inputName = document.querySelector(userData.inputName);
       this.inputJob = document.querySelector(userData.inputJob);
@@ -34,9 +23,3 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
-  const popup = new MasterPopup(".popup");
-  const userInfo = new UserInfo(userData, popup);
-
-  userInfo.setEventListeners();
-});

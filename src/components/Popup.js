@@ -1,6 +1,6 @@
 
 
-export class MasterPopup {
+export default class MasterPopup {
   constructor(selector) {
     this.element = document.querySelector(selector);
   }
@@ -23,7 +23,7 @@ export class MasterPopup {
     const overlay = document.querySelector('.overlay');
     overlay.style.display = 'none';
     
-    const form = this.element.querySelector('form');
+    const form = this.element.querySelector('#adder__form');
     if (form) {
       form.reset();
     }

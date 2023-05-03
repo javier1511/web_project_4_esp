@@ -1,13 +1,6 @@
-const parameters = {
-  formSelector: ".form",
-  inputSelector: ".form__input",
-  submitButtonSelector: ".form__button",
-  inactiveButtonClass: "form__submit_inactive",
-  inputErrorClass: "form__input_type_error",
-  errorClass: "form__error-message_active"
-};
 
-class FormValidator {
+
+export default class FormValidator {
   constructor(parameters) {
     this._formSelector = parameters.formSelector;
     this._inputSelector = parameters.inputSelector;
@@ -76,5 +69,3 @@ class FormValidator {
   }
 }
 
-const formValidator = new FormValidator(parameters);
-formValidator.enableValidation();

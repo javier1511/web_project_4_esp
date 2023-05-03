@@ -1,9 +1,9 @@
-import { MasterPopup } from "./Popup.js";
+import MasterPopup from "./Popup.js";
 
 const popupImage = document.querySelector(".modal__picture");
 const popupText = document.querySelector(".modal__text-subtitle");
 
-export class PopupWithImage extends MasterPopup {
+export default class PopupWithImage extends MasterPopup {
   constructor() {
     super(".modal");
     this.popupImage = document.querySelector(".modal__picture");

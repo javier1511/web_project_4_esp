@@ -1,4 +1,4 @@
-import { PopupWithImage } from "./PopupWithImage.js";
+import PopupWithImage from "./PopupWithImage.js";
 
 export class Card {
   constructor(data, cardSelector) {
