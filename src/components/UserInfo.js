@@ -25,7 +25,6 @@ export default class UserInfo {
 
   async getUserInfo() {
     const getUserData = await this._api.getUserProfile();
-    console.log(getUserData);
     this.profileTitle.textContent = getUserData.name;
     this.profileJob.textContent = getUserData.about;
     this.inputName.value = getUserData.name;

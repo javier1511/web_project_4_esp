@@ -1,0 +1,6 @@
+.profile__picture-container:hover {
+    opacity: 0.7;
+    background-image: url(../../../images/Lapiz.png);
+    background-size: 500px;
+    background-color: black;
+  }

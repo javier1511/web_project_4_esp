@@ -38,16 +38,23 @@ export default class Api {
       }, {
         'Content-Type': 'application/json'
       });
-  
+
       console.log(newCard); // Agregado console.log para validar la respuesta
-  
+
       return newCard;
     } catch (err) {
       console.log(err);
     }
   }
-  
-  
+
+  async removeCardFromApi(cardId) {
+    try {
+      return await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/${cardId}`, "DELETE");
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
   async addLike(cardId) {
     try {
       return await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "PUT");
@@ -67,7 +74,6 @@ export default class Api {
   async getUserProfile() {
     try {
       const res = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/users/me", "GET");
-      console.log(res);
       return res;
     } catch (err) {
       console.log(err);

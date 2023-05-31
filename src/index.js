@@ -29,13 +29,7 @@ import Api from "./components/Api.js";
     ".sites"
   );
 
-  api.getInitialsCardsFromServer()
-  .then((cards) => {
-    cardlist.updateItems(cards); // Actualizamos los elementos de cardlist con los datos obtenidos
-  })
-  .catch((error) => {
-    console.error("Error al obtener las tarjetas:", error);
-  });
+  
   
   cardlist.renderItems();
 
@@ -59,10 +53,10 @@ const userData = {
   
   addingCardForm.addEventListener("submit", async (evt) => {
     evt.preventDefault();
+    const name = adderTitle.value;
+    const link = adderUrl.value;
     const apiNewCard = new Api();
     const data = await apiNewCard.addNewCardFromApi(name, link);
-    const name = apiNewCard.name; // Obtener el valor de name desde alguna variable
-    const link = apiNewCard.link; // Obtener el valor de link desde alguna variable
     const cardsSource = new Card(data, ".template").generateCard();
     sites.prepend(cardsSource);
   });
