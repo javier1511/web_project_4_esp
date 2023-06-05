@@ -39,13 +39,16 @@ export default class UserInfo {
 
   async changeUserAvatar(evt) {
     evt.preventDefault();
-    const avatar = this.urlValue; // Obtener el valor del campo de entrada del avatar
-    const patchUserAvatar = await this._api.changeAvatarProfile(avatar);
-    console.log(patchUserAvatar);
-    const profilePicture = document.querySelector(".profile__picture");
-    profilePicture.src = avatar; // Usar el valor del avatar como la fuente de la imagen
+    const avatar = this.urlValue.value; 
+    try {
+      const patchUserAvatar = await this._api.changeAvatarProfile(avatar);
+      const profilePicture = document.querySelector(".profile__picture");
+      profilePicture.src = avatar;
+      console.log(patchUserAvatar);
+    } catch (err) {
+      console.log(err);
+    }
   }
-  
   
 
 
