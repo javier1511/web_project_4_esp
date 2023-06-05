@@ -4,10 +4,11 @@ import PopupWithImage from "./PopupWithImage.js";
 export class Card {
   constructor(data, cardSelector) {
     this.name = data.name;
+    this.ownerId = data.owner._id;
     this.link = data.link;
     this.likes = data.likes.length;
     this._cardSelector = cardSelector;
-    this.cardId = data._id; // Corregido el nombre de la propiedad del ID de la tarjeta
+    this.cardId = data._id;
     this._cardLike = this._cardLike.bind(this);
     this._api = new Api();
     this._getOwnerProfile();
@@ -24,9 +25,7 @@ export class Card {
 
   async _getOwnerProfile() {
     try {
-      const userProfile = await this._api.getUserProfile();
-      this.owner = userProfile;
-      this._toggleTrashIcon(); // Llamar al método para alternar la visibilidad del icono de eliminación
+      this._toggleTrashIcon();
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +34,7 @@ export class Card {
   async _toggleTrashIcon() {
     try {
       const currentUser = await this._api.getUserProfile();
-      if (currentUser._id === this.owner._id) {
+      if (currentUser._id === this.ownerId) {
         this._trashIcon.style.display = "block";
       } else {
         this._trashIcon.style.display = "none";
@@ -63,46 +62,57 @@ export class Card {
 
   _cardRemove() {
     this._element.remove();
-    this._api.removeCardFromApi(this.cardId); // Llamar al método para eliminar la tarjeta desde el API
+    this._api.removeCardFromApi(this.cardId);
   }
+
   _openConfirmationForm() {
     const confirmationForm = document.querySelector(".confirmation-form");
-    confirmationForm.classList.add("popup__opened")
-    
+    confirmationForm.classList.add("popup__opened");
+
+    const confirmationCloseButton = confirmationForm.querySelector(".confirmation__form-close");
+    confirmationCloseButton.addEventListener("click", () => {
+      this._closeConfirmationForm();
+    });
+
     const confirmButton = confirmationForm.querySelector(".confirmation__form-button");
-    confirmButton.addEventListener("click", () => {
+    confirmButton.addEventListener("click", (evt) => {
+      evt.preventDefault();
       this._cardRemove();
-      confirmationForm.style.display = "none";
+      this._closeConfirmationForm();
     });
   }
-  
+
+  _closeConfirmationForm() {
+    const confirmationForm = document.querySelector(".confirmation-form");
+    confirmationForm.classList.remove("popup__opened");
+  }
+
   async _cardLike(e, cardId) {
     if (!e.target.classList.contains("sites__description-icon-active")) {
       e.target.classList.add("sites__description-icon-active");
       await this._api.addLike(cardId);
-      this.likes++; // Aumentar el conteo de likes
+      this.likes++;
     } else {
       e.target.classList.remove("sites__description-icon-active");
       await this._api.removeLike(cardId);
-      this.likes--; // Disminuir el conteo de likes
+      this.likes--;
     }
     const cardsLikesCount = this._element.querySelector(".sites__description-counter");
-    cardsLikesCount.textContent = this.likes; // Actualizar el conteo de likes en el elemento DOM
+    cardsLikesCount.textContent = this.likes;
   }
+
   _setEventListeners() {
     this._trashIcon.addEventListener("click", () => {
       this._openConfirmationForm();
     });
-  
+
     this._descriptionIcon.addEventListener("click", (e) => {
-      console.log(this.cardId); // Corregido el nombre de la propiedad del ID de la tarjeta
       this._cardLike(e, this.cardId);
     });
-  
+
     this._picture.addEventListener("click", (evt) => {
       const openMyPopup = new PopupWithImage();
       openMyPopup.handleOpenPopup(evt.target.src, evt.target.alt);
     });
   }
-  
 }

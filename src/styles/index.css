@@ -24,6 +24,13 @@
 @import url(../blocks/sites/__description-container/__description-icon/sites__description-icon.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/profile-form/profile-form.css);
+@import url(../blocks/profile-form/__form-container/profile__form-container.css);
+@import url(../blocks/profile-form/__form-container/__form-main/profile__form-main.css);
+@import url(../blocks/profile-form/__form-container/__form-main/__form-text/profile__form-text.css);
+@import url(../blocks/profile-form/__form-container/__form-main/__form-button/profile__form-button.css);
+@import url(../blocks/profile-form/__form-container/__form-main/__form-input/profile__form-input.css);
+@import url(../blocks/profile-form/__form-container/__form-close/profile__form-close.css);
 @import url(../blocks/confirmation-form/confirmation-form.css);
 @import url(../blocks/confirmation-form/__form-container/confirmation__form-container.css);
 @import url(../blocks/confirmation-form/__form-body/confirmation__form-body.css);
@@ -68,34 +75,3 @@ body {
   color: #ffffff;
   margin: 0;
 }
-
-.profile__picture-edit {
-  background-image: url(../images/Lapiz.png);
-  background-size: 100%;
-  Width:26px;
-Height:26px;
-  background-color: black;
-  background-repeat: no-repeat;
-}
-
-
-
-.profile-form{
-  background-color: #fff;
-  width: 358px;
-  height: 330px;
-  border-radius: 10px;
-  position: relative;
-  padding: 34px 36px;
-}
-
-.profile__form_form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 358px;
-  height: 330px;
-}
-
-
-

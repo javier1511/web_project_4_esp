@@ -14,8 +14,9 @@
     <div class="separator"></div>
     <div class="profile">
       <div class="profile__picture-container">
+        <button class="profile__picture-overlay"></button>
         <img src="<%=require('./images/profile-avatar-min.jpg')%>" alt="imagen-de-perfil" class="profile__picture">
-        <button class="profile__picture-edit"></button>
+       
       </div>
       <div class="profile__edit-container">
         <h4 class="profile__title">Jacques Cousteau</h4>
@@ -29,26 +30,26 @@
       </div>
     </div>
     <div class="confirmation-form">
-      <div class="confirmation_form-container">
-        <img class="confirmation__form-close" src="<%=require('./images/Close-Icon-min.png')%>" alt="">
+      <div class="confirmation__form-container">
+        <img class="confirmation__form-close" src="<%=require('./images/Close-Icon-min.png')%>" alt="closeIcon">
         <form class="confirmation__form-body">
           <p class="confirmation__form-text">¿Estás seguro/a?</p>
           <button class="confirmation__form-button">Sí</button>
         </form>
       </div>
     </div>
-    
-    <div class="profile-form popup__container">
+
+    <div class="profile-form">
       <div class="profile__form-container">
-        <img class="profile__form-close" src="<%=require('./images/Close-Icon-min.png')%>" alt="">
-        <form class="profile__form-form">
-          <h2 class="profile__form-text">Nuevo Lugar</h2>
-          <input type="url" name="job" class="form__input" id="url" placeholder="Enlace de imagen" required>
-          <span class="form__error-message" id="url-error"></span>
-          <button class="profile__form-button">Guardar</button>
+        <img src= "<%=require('./images/Close-Icon-min.png')%>" alt="cerrar-icono" class="profile__form-close">
+        <form class="profile__form-main" novalidate>
+          <h2 class="profile__form-text">Cambiar foto de perfil</h2>
+          <input type="url" name="profile" class="profile__form_input" id="profile-url" placeholder="Enlace de imagen" required>
+          <button id="save__profile" class="profile__form-button" >Guardar</button>
         </form>
+
       </div>
-    </div>
+    </div> 
   
 
     <div class="popup ">

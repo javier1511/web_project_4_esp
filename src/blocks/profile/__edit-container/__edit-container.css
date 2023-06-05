@@ -7,6 +7,8 @@
   grid-row: 1 / 2;
   padding-left: 15px;
 }
+
+
 @media screen and (max-width: 1279px) {
   .profile__edit-container {
     width: 88.12%;

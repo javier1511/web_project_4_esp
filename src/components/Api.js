@@ -38,9 +38,7 @@ export default class Api {
       }, {
         'Content-Type': 'application/json'
       });
-
       console.log(newCard); // Agregado console.log para validar la respuesta
-
       return newCard;
     } catch (err) {
       console.log(err);
@@ -92,5 +90,16 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
+  }
+    async changeAvatarProfile(avatar) {
+      try {
+        const res = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/users/me/avatar", "PATCH", {
+          avatar: JSON.stringify(avatar)
+        });
+        console.log(res);
+        return res;
+      } catch (err) {
+        console.log(err);
+      }
   }
 }

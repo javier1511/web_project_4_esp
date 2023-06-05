@@ -39,7 +39,10 @@ const userData = {
     profileTitle: ".profile__title",
     profileJob: ".profile__subtitle",
     saveButton: "#save__button",
-
+    openProfileAvatar: ".profile__picture-overlay",
+    closeProfileAvatar:".profile__form-close",
+    urlValue:"#profile-url",
+    saveAvatar:".profile__form-button"
   };
   
   const popup = new MasterPopup(".popup");
