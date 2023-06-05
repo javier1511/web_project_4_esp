@@ -42,9 +42,11 @@ export default class UserInfo {
     const avatar = this.urlValue.value; 
     try {
       const patchUserAvatar = await this._api.changeAvatarProfile(avatar);
+      
       const profilePicture = document.querySelector(".profile__picture");
       profilePicture.src = avatar;
       console.log(patchUserAvatar);
+      this.closeAvatarPopup(evt)
     } catch (err) {
       console.log(err);
     }

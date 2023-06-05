@@ -1,11 +1,14 @@
 .profile__picture-container{
   position: relative;
+  max-width: 168.75px;
+  height: 120px;
  
 
 }
 
 .profile__picture-overlay {
   position: absolute;
+  
   top: 0;
   left: 0;
   width: 100%;
