@@ -40,9 +40,9 @@ const userData = {
     profileJob: ".profile__subtitle",
     saveButton: "#save__button",
     openProfileAvatar: ".profile__picture-overlay",
-    closeProfileAvatar:".profile__form-close",
+    closeProfileAvatar:".avatar__close",
     urlValue:"#profile-url",
-    saveAvatar:".profile__form-button"
+    saveAvatar:".avatar__button"
   };
   
   const popup = new MasterPopup(".popup");

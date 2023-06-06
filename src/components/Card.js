@@ -66,15 +66,15 @@ export class Card {
   }
 
   _openConfirmationForm() {
-    const confirmationForm = document.querySelector(".confirmation-form");
+    const confirmationForm = document.querySelector(".confirmation");
     confirmationForm.classList.add("popup__opened");
 
-    const confirmationCloseButton = confirmationForm.querySelector(".confirmation__form-close");
+    const confirmationCloseButton = confirmationForm.querySelector(".confirmation__close");
     confirmationCloseButton.addEventListener("click", () => {
       this._closeConfirmationForm();
     });
 
-    const confirmButton = confirmationForm.querySelector(".confirmation__form-button");
+    const confirmButton = confirmationForm.querySelector(".confirmation__button");
     confirmButton.addEventListener("click", (evt) => {
       evt.preventDefault();
       this._cardRemove();
@@ -83,7 +83,7 @@ export class Card {
   }
 
   _closeConfirmationForm() {
-    const confirmationForm = document.querySelector(".confirmation-form");
+    const confirmationForm = document.querySelector(".confirmation");
     confirmationForm.classList.remove("popup__opened");
   }
 

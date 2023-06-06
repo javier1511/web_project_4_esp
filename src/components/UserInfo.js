@@ -55,13 +55,13 @@ export default class UserInfo {
 
 
   openAvatarPopup() {
-    const avatarEdit = document.querySelector(".profile-form");
+    const avatarEdit = document.querySelector(".avatar");
     avatarEdit.classList.add("popup__opened");
   }
 
   closeAvatarPopup(evt) {
     evt.preventDefault();
-    const avatarEdit = document.querySelector(".profile-form");
+    const avatarEdit = document.querySelector(".avatar");
     avatarEdit.classList.remove("popup__opened");
   }
 
