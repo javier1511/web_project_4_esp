@@ -15,6 +15,9 @@ Este es un proyecto que muestra las ciudades natales de algunos de los empleados
 **Tecnologias** 
 En este proyecto utilice HTML, CSS para la estructura y estilos del sitio, JAVASCRIPT, ahora tiene se trabajo de forma mas ordenada, dividiendo la interactividad del proyecto en clases, estas clases su acoplamiento es debil por lo que pueden reutilizarse. 
 
+Las imagenes fueron renderizadas desde un servidor privado, las cuales son dinamicas, podras editar el perfil, las cartas, los likes
+y estos se guardaran en tu perfil, solo tu podras eliminar las cartas que agregues dinamicamente. 
+
 Your site is live at https://javier1511.github.io/web_project_4_esp/
 
 
