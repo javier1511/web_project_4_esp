@@ -43,6 +43,7 @@ const userData = {
     closeProfileAvatar:".avatar__close",
     urlValue:"#profile-url",
     saveAvatar:".avatar__button"
+    
   };
   
   const popup = new MasterPopup(".popup");
@@ -62,8 +63,19 @@ const userData = {
     const data = await apiNewCard.addNewCardFromApi(name, link);
     const cardsSource = new Card(data, ".template").generateCard();
     sites.prepend(cardsSource);
+
+    
   });
   
+  const adderSubmitButton = document.getElementById("adder__submit");
+  adderSubmitButton.addEventListener("click", () => {
+    adderSubmitButton.textContent = "Guardando...";
+
+    
+  setTimeout(() => {
+    adderSubmitButton.textContent = "Crea";
+  }, 2000);
+  });
   
   const parameters = {
     formSelector: ".form",

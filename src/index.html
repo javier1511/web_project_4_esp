@@ -45,7 +45,7 @@
         <form class="avatar__form" novalidate>
           <h2 class="avatar__text">Cambiar foto de perfil</h2>
           <input type="url" name="profile" class="avatar__input" id="profile-url" placeholder="Enlace de imagen" required>
-          <button id="save__profile" class="avatar__button" >Guardar</button>
+          <button id="save__profile" class="avatar__button" >Guarda</button>
         </form>
 
       </div>
@@ -75,7 +75,7 @@
           <span class="form__error-message" id="title-error"></span>
           <input type="url" name="job" class="form__input" id="url" placeholder="Enlace de imagen" required>
           <span class="form__error-message" id="url-error"></span>
-          <button id="adder__submit" class="form__button form__submit-inactive" >Crear</button>
+          <button id="adder__submit" class="form__button form__submit-inactive" >Crea</button>
         </form>
       </div>
     </div>
@@ -89,8 +89,11 @@
       </div>
         <div class="sites__description-container">
           <p class="sites__description-text">Valle de Yosemite</p>
-          <img src="<%=require('./images/heart.svg')%>"  alt="me-gusta-imagen" class="sites__description-icon">
-          <span class="sites__description-counter"></span>
+          <div class="like__container">
+            <img src="<%=require('./images/heart.svg')%>"  alt="me-gusta-imagen" class="sites__description-icon">
+            <span class="sites__description-counter"></span>
+          </div>
+        
         </div>
     </div>
   </template>

@@ -23,7 +23,6 @@ export default class Api {
   async getCards() {
     try {
       const res = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/cards", "GET");
-      console.log(res);
       return res;
     } catch (err) {
       console.log(err);

@@ -17,7 +17,6 @@ export default class UserInfo {
 
   async submitForm(evt) {
     evt.preventDefault();
-    console.log(this.submitForm);
     const name = this.inputName.value;
     const about = this.inputJob.value;
     const patchUser = await this._api.patchUserProfile(name, about);
@@ -28,7 +27,6 @@ export default class UserInfo {
 
   async getUserInfo() {
     const getUserData = await this._api.getUserProfile();
-    console.log(getUserData);
     this.profileTitle.textContent = getUserData.name;
     this.profileJob.textContent = getUserData.about;
     this.inputName.value = getUserData.name;
@@ -67,7 +65,12 @@ export default class UserInfo {
 
   setEventListeners() {
     this.saveButton.addEventListener("click", (evt) => {
+      this.saveButton.textContent ="Guardando...";
       this.submitForm(evt);
+
+      setTimeout(() => {
+        this.saveButton.textContent = "Guardar";
+      }, 2000);
     });
     this.openProfileAvatar.addEventListener("click", (evt) => {
       this.openAvatarPopup(evt);
@@ -77,8 +80,12 @@ export default class UserInfo {
     });
     this.saveAvatar.addEventListener("click", (evt) => {
       evt.preventDefault();
+      this.saveAvatar.textContent ="Guardando...";
       this.changeUserAvatar(evt);
-    })
 
+      setTimeout(() => {
+        this.saveAvatar.textContent = "Guarda";
+      }, 2000);
+    })
   }
-}
+}   
