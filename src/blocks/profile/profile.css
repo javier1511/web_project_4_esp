@@ -5,12 +5,13 @@
   display: grid;
   grid-template-columns: auto auto 1fr;
   grid-template-rows: 1fr auto;
+
 }
 @media screen and (max-width: 1279px) {
   .profile {
     width: 282px;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    justify-content: center ;
   }
 }

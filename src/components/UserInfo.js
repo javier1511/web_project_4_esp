@@ -1,4 +1,5 @@
 import Api from "./Api.js";
+import FormValidator from "./FormValidator.js";
 
 export default class UserInfo {
   constructor(userData, popup) {
@@ -13,6 +14,14 @@ export default class UserInfo {
     this.closeProfileAvatar = document.querySelector(userData.closeProfileAvatar);
     this.popup = popup;
     this._api = new Api();
+    this._formValidator = new FormValidator({
+        formSelector: ".form",
+        inputSelector: ".form__input",
+        submitButtonSelector: ".form__button",
+        inactiveButtonClass: "form__submit_inactive",
+        inputErrorClass: "form__input_type_error",
+        errorClass: "form__error-message_active",
+    });
   }
 
   async submitForm(evt) {
@@ -33,24 +42,27 @@ export default class UserInfo {
     this.inputJob.value = getUserData.about;
     const profilePicture = document.querySelector(".profile__picture");
     profilePicture.src = getUserData.avatar;
+    this._formValidator._checkInputValidity(this.inputName.form, this.inputName);
+    this._formValidator._checkInputValidity(this.inputJob.form, this.inputJob);
+    this._formValidator._toggleButtonState(
+      Array.from(this.inputName.form.querySelectorAll(this._formValidator._inputSelector)),
+      this.saveButton
+    );
   }
 
   async changeUserAvatar(evt) {
     evt.preventDefault();
-    const avatar = this.urlValue.value; 
+    const avatar = this.urlValue.value;
     try {
       const patchUserAvatar = await this._api.changeAvatarProfile(avatar);
-      
       const profilePicture = document.querySelector(".profile__picture");
       profilePicture.src = avatar;
       console.log(patchUserAvatar);
-      this.closeAvatarPopup(evt)
+      this.closeAvatarPopup(evt);
     } catch (err) {
       console.log(err);
     }
   }
-  
-
 
   openAvatarPopup() {
     const avatarEdit = document.querySelector(".avatar");
@@ -65,7 +77,7 @@ export default class UserInfo {
 
   setEventListeners() {
     this.saveButton.addEventListener("click", (evt) => {
-      this.saveButton.textContent ="Guardando...";
+      this.saveButton.textContent = "Guardando...";
       this.submitForm(evt);
 
       setTimeout(() => {
@@ -80,12 +92,14 @@ export default class UserInfo {
     });
     this.saveAvatar.addEventListener("click", (evt) => {
       evt.preventDefault();
-      this.saveAvatar.textContent ="Guardando...";
+      this.saveAvatar.textContent = "Guardando...";
       this.changeUserAvatar(evt);
 
       setTimeout(() => {
         this.saveAvatar.textContent = "Guarda";
       }, 2000);
-    })
+    });
+
+    this._formValidator.enableValidation();
   }
-}   
+}

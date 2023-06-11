@@ -9,13 +9,13 @@
 <body>
   <main class="page">
     <div class="header">
-      <img class="header__logo" src="<%=require('./images/Headerlogo-min.svg')%>"alt="Alrededor-de-us-logo">
+      <img class="header__logo" src="<%=require('../images/Headerlogo-min.svg')%>"alt="Alrededor-de-us-logo">
     </div>
     <div class="separator"></div>
     <div class="profile">
       <div class="profile__picture-container">
         <button class="profile__picture-overlay"></button>
-        <img src="<%=require('./images/profile-avatar-min.jpg')%>" alt="imagen-de-perfil" class="profile__picture">
+        <img src="<%=require('../images/profile-avatar-min.jpg')%>" alt="imagen-de-perfil" class="profile__picture">
        
       </div>
       <div class="profile__edit-container">
@@ -31,7 +31,7 @@
     </div>
     <div class="confirmation">
       <div class="confirmation__container">
-        <img class="confirmation__close" src="<%=require('./images/Close-Icon-min.png')%>" alt="closeIcon">
+        <img class="confirmation__close" src="<%=require('../images/Close-Icon-min.png')%>" alt="closeIcon">
         <form class="confirmation__form">
           <p class="confirmation__text">¿Estás seguro/a?</p>
           <button class="confirmation__button">Sí</button>
@@ -41,7 +41,7 @@
 
     <div class="avatar">
       <div class="avatar__container">
-        <img src= "<%=require('./images/Close-Icon-min.png')%>" alt="cerrar-icono" class="avatar__close">
+        <img src= "<%=require('../images/Close-Icon-min.png')%>" alt="cerrar-icono" class="avatar__close">
         <form class="avatar__form" novalidate>
           <h2 class="avatar__text">Cambiar foto de perfil</h2>
           <input type="url" name="profile" class="avatar__input" id="profile-url" placeholder="Enlace de imagen" required>
@@ -54,7 +54,7 @@
 
     <div class="popup ">
       <div class="popup__container">
-        <img src= "<%=require('./images/Close-Icon-min.png')%>" alt="cerrar-icono" class="popup__close-icon">
+        <img src= "<%=require('../images/Close-Icon-min.png')%>" alt="cerrar-icono" class="popup__close-icon">
         <form class="form" novalidate>
           <h2 class="form__title">Edit profile</h2>
           <input type="text" name="name" class="form__input" id="name" required minlength="2" maxlength="40">
@@ -63,12 +63,12 @@
           <span class="form__error-message" id="job-error"></span>
           <button id="save__button" class="form__button form__submit-inactive" >Guardar</button>
         </form>
-
+        
       </div>
     </div> 
     <div class="adder ">
       <div class="adder__container">
-        <img src="<%=require('./images/Close-Icon-min.png')%>" id="adder__close-icon" alt="cerrar-icono" class="adder__close-icon">
+        <img src="<%=require('../images/Close-Icon-min.png')%>" id="adder__close-icon" alt="cerrar-icono" class="adder__close-icon">
         <form class="form " id="adder__form" novalidate>
           <h2 class="form__title">Nuevo Lugar</h2>
           <input type="text" name="name" class="form__input" id="title" placeholder="Titulo" required minlength="2" maxlength="30">
@@ -84,13 +84,13 @@
   <template class="template">
     <div class="cards__container">
       <div class="sites__picture-container">
-        <img src= "<%=require('./images/trash.png')%>" alt="yosemite-imagen-vista" class="sites__trash-icon">
+        <img src= "<%=require('../images/trash.png')%>" alt="yosemite-imagen-vista" class="sites__trash-icon">
         <img src=" " alt="" class="sites__picture">
       </div>
         <div class="sites__description-container">
           <p class="sites__description-text">Valle de Yosemite</p>
           <div class="like__container">
-            <img src="<%=require('./images/heart.svg')%>"  alt="me-gusta-imagen" class="sites__description-icon">
+            <img src="<%=require('../images/heart.svg')%>"  alt="me-gusta-imagen" class="sites__description-icon">
             <span class="sites__description-counter"></span>
           </div>
         
@@ -102,7 +102,7 @@
 
 
     <div class="modal  ">
-      <img src="<%=require('./images/Close-Icon-min.png')%>" alt="" class="modal__close-button">
+      <img src="<%=require('../images/Close-Icon-min.png')%>" alt="" class="modal__close-button">
          <div class="modal__container">
           <img src=" " alt="" class="modal__picture">
           <span class="modal__text-subtitle"></span>

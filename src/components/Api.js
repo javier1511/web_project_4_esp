@@ -71,6 +71,7 @@ export default class Api {
   async getUserProfile() {
     try {
       const res = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/users/me", "GET");
+      console.log("🚀 ~ file: Api.js:74 ~ Api ~ getUserProfile ~ res:", res)
       return res;
     } catch (err) {
       console.log(err);
@@ -83,6 +84,8 @@ export default class Api {
         name,
         about,
         avatar
+      }, {
+        "Content-Type": "application/json"
       });
       console.log(res);
       return res;

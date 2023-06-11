@@ -1,17 +1,17 @@
-import "./styles/index.css"; // agrega la importación del archivo principal de hojas de estilo
-import { Section } from "./components/Section.js";
-import { Card } from "./components/Card.js";
-import MasterPopup from "./components/Popup.js";
-import UserInfo from "./components/UserInfo.js";
-import PopupWithForm from "./components/PopupWithForm.js";
+import "../styles/index.css"; // agrega la importación del archivo principal de hojas de estilo
+import { Section } from "../components/Section.js";
+import { Card } from "../components/Card.js";
+import MasterPopup from "../components/Popup.js";
+import UserInfo from "../components/UserInfo.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 import {
   addingCardForm,
   adderTitle,
   adderUrl,
   sites,
-} from "./utils/constants.js";
-import FormValidator from "./components/FormValidator.js";
-import Api from "./components/Api.js";
+} from "../utils/constants.js";
+import FormValidator from "../components/FormValidator.js";
+import Api from "../components/Api.js";
 
 (async function () {
   const api = new Api();
