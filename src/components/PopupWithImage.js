@@ -1,6 +1,5 @@
 import MasterPopup from "./Popup.js";
 
-const popupImage = document.querySelector(".modal__picture");
 const popupText = document.querySelector(".modal__text-subtitle");
 
 export default class PopupWithImage extends MasterPopup {
