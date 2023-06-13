@@ -12,6 +12,7 @@ export class Card {
     this._cardLike = this._cardLike.bind(this);
     this._api = new Api();
     this._getOwnerProfile();
+    this.arraylikes = data.likes;
   }
 
   _getTemplate() {
@@ -33,7 +34,7 @@ export class Card {
 
   async _toggleTrashIcon() {
     try {
-      const currentUser = await this._api.getUserProfile();
+ const currentUser = "f50e6041a882d88147603229";
       if (currentUser._id === this.ownerId) {
         this._trashIcon.style.display = "block";
       } else {
@@ -57,6 +58,13 @@ export class Card {
 
     this._setEventListeners();
     this._toggleTrashIcon();
+
+    const ILike = this.arraylikes.some((element) => {
+  
+      return element._id === this.ownerId;
+    });
+    if (ILike){this._element.querySelector(".sites__description-icon").classList.add("sites__description-icon-active")}
+
     return this._element;
   }
 

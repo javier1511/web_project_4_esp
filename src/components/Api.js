@@ -23,6 +23,7 @@ export default class Api {
   async getCards() {
     try {
       const res = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/cards", "GET");
+      console.log(res);
       return res;
     } catch (err) {
       console.log(err);
@@ -34,7 +35,8 @@ export default class Api {
       const newCard = await this._useFetch("https://around.nomoreparties.co/v1/web_es_05/cards", "POST", {
         name: name,
         link: link,
-      }, {
+      }, 
+      {
         'Content-Type': 'application/json'
       });
       console.log(newCard); // Agregado console.log para validar la respuesta
@@ -54,7 +56,12 @@ export default class Api {
 
   async addLike(cardId) {
     try {
-      return await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "PUT");
+      const like = this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "PUT"); {
+      like
+      }{
+        console.log(like);
+        return like;
+      }
     } catch (err) {
       throw new Error(err);
     }
@@ -62,7 +69,10 @@ export default class Api {
 
   async removeLike(cardId) {
     try {
-      return await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "DELETE");
+      const removeLike = await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "DELETE"); {
+        console.log(removeLike);
+        return removeLike;
+      }
     } catch (err) {
       throw new Error(err);
     }

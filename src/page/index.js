@@ -15,6 +15,7 @@ import Api from "../components/Api.js";
 
 (async function () {
   const api = new Api();
+  console.log(api);
   const getCards = await api.getCards();
 
   const cardlist = new Section(
@@ -64,7 +65,7 @@ const userData = {
     const cardsSource = new Card(data, ".template").generateCard();
     sites.prepend(cardsSource);
 
-    
+
   });
   
   const adderSubmitButton = document.getElementById("adder__submit");

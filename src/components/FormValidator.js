@@ -21,12 +21,6 @@ export default class FormValidator {
     });
   }
 
-  _isInputListEmpty(inputList) {
-    return inputList.every((inputElement) => {
-      return inputElement.value.trim() === "";
-    });
-  }
-
   _hideInputError(formElement, inputElement) {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
@@ -43,13 +37,20 @@ export default class FormValidator {
   }
 
   _toggleButtonState(inputList, buttonElement) {
-    const hasInvalidInput = this._hasInvalidInput(inputList);
-    const isInputListEmpty = this._isInputListEmpty(inputList);
-
-    if (hasInvalidInput || isInputListEmpty) {
+    if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this._inactiveButtonClass);
+      buttonElement.disabled = true;
     } else {
       buttonElement.classList.remove(this._inactiveButtonClass);
+      buttonElement.disabled = false;
+    }
+  }
+
+  _inputEmpty(inputList, buttonElement) {
+    if (inputList.length === 0) {
+      this._toggleButtonState(inputList, buttonElement, true);
+    } else {
+      this._toggleButtonState(inputList, buttonElement, false);
     }
   }
 
@@ -57,44 +58,22 @@ export default class FormValidator {
     const inputList = Array.from(formElement.querySelectorAll(this._inputSelector));
     const buttonElement = formElement.querySelector(this._submitButtonSelector);
 
-    const toggleButtonState = () => {
-      const hasInvalidInput = this._hasInvalidInput(inputList);
-      const isInputListEmpty = this._isInputListEmpty(inputList);
-
-      if (hasInvalidInput || isInputListEmpty) {
-        buttonElement.classList.add(this._inactiveButtonClass);
-      } else {
-        buttonElement.classList.remove(this._inactiveButtonClass);
-      }
-    };
-
     inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(formElement, inputElement);
-        toggleButtonState();
+        this._toggleButtonState(inputList, buttonElement);
       });
     });
 
-    toggleButtonState();
-  }
-
-  _resetForm(formElement) {
-    formElement.reset();
-    const inputList = Array.from(formElement.querySelectorAll(this._inputSelector));
-    const buttonElement = formElement.querySelector(this._submitButtonSelector);
-    buttonElement.classList.add(this._inactiveButtonClass);
-    inputList.forEach((inputElement) => {
-      this._hideInputError(formElement, inputElement);
-    });
+    this._inputEmpty(inputList, buttonElement);
   }
 
   enableValidation() {
     const formList = Array.from(document.querySelectorAll(this._formSelector));
     formList.forEach((formElement) => {
       this._setEventListeners(formElement);
-      formElement.addEventListener("submit", (evt) => {
+      formElement.addEventListener("submit", function (evt) {
         evt.preventDefault();
-        this._resetForm(formElement);
       });
     });
   }
