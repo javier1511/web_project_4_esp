@@ -56,12 +56,8 @@ export default class Api {
 
   async addLike(cardId) {
     try {
-      const like = this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "PUT"); {
-      like
-      }{
-        console.log(like);
-        return like;
-      }
+      const like = await this._useFetch(`https://around.nomoreparties.co/v1/web_es_05/cards/likes/${cardId}`, "PUT"); 
+      return like;
     } catch (err) {
       throw new Error(err);
     }

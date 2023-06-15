@@ -11,7 +11,7 @@ export class Card {
     this.cardId = data._id;
     this._cardLike = this._cardLike.bind(this);
     this._api = new Api();
-    this._getOwnerProfile();
+    //this._getOwnerProfile();
     this.arraylikes = data.likes;
   }
 
@@ -32,10 +32,10 @@ export class Card {
     }
   }
 
-  async _toggleTrashIcon() {
+  _toggleTrashIcon() {
     try {
- const currentUser = "f50e6041a882d88147603229";
-      if (currentUser._id === this.ownerId) {
+      const currentUser = "f50e6041a882d88147603229";
+      if (currentUser === this.ownerId) {
         this._trashIcon.style.display = "block";
       } else {
         this._trashIcon.style.display = "none";
@@ -60,10 +60,10 @@ export class Card {
     this._toggleTrashIcon();
 
     const ILike = this.arraylikes.some((element) => {
-  
+
       return element._id === this.ownerId;
     });
-    if (ILike){this._element.querySelector(".sites__description-icon").classList.add("sites__description-icon-active")}
+    if (ILike) { this._element.querySelector(".sites__description-icon").classList.add("sites__description-icon-active") }
 
     return this._element;
   }
@@ -89,7 +89,10 @@ export class Card {
       this._closeConfirmationForm();
     });
   }
-
+  
+  /**
+   * @description Close confirmation form
+   */
   _closeConfirmationForm() {
     const confirmationForm = document.querySelector(".confirmation");
     confirmationForm.classList.remove("popup__opened");
